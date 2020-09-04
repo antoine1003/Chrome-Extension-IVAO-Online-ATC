@@ -4,8 +4,8 @@
   "manifest_version": 2,
   "description": "__MSG_appDescription__",
   "icons": {
-    "16": "images/icon-16.png",
-    "128": "images/icon-128.png"
+    "16": "images/offline-16.png",
+    "128": "images/offline-128.png"
   },
   "default_locale": "en",
   "background": {
@@ -21,7 +21,8 @@
     "https://*/*",
     "background",
     "notifications",
-    "storage"
+    "storage",
+    "alarms"
   ],
   "options_ui": {
     "page": "options.html",
@@ -42,13 +43,13 @@
   ],
   "browser_action": {
     "default_icon": {
-      "19": "images/icon-19.png",
-      "38": "images/icon-38.png"
+      "19": "images/offline-19.png",
+      "38": "images/offline-38.png"
     },
     "default_title": "ivao online atc",
     "default_popup": "popup.html"
   },
   "web_accessible_resources": [
-    "images/icon-48.png"
+    "images/offline-48.png"
   ]
 }
