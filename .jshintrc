@@ -8,6 +8,7 @@
     "globals": {
         "EventEmitter": true,
         "Promise": true,
-        "chrome": true
+        "chrome": true,
+        "Papa": true
     }
 }

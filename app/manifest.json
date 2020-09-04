@@ -11,14 +11,14 @@
   "background": {
     "scripts": [
       "libs/polyfill.min.js",
+      "libs/papaparse.min.js",
       "scripts/chromereload.js",
       "scripts/background.js"
     ]
   },
   "permissions": [
     "tabs",
-    "http://*/*",
-    "https://*/*",
+    "http://api.ivao.aero/getdata/whazzup/whazzup.txt",
     "background",
     "notifications",
     "storage",
