@@ -1,0 +1,14 @@
+{
+    "appName": {
+      "message": "ivao online atc",
+      "description": "The name of the application"
+    },
+    "appDescription": {
+      "message": "Cette extension permet de savoir quand certaines positions ATC sont ouvertes sur IVAO.",
+      "description": "The description of the application"
+    },
+    "parametersSaved": {
+        "message": "Paramètres sauvegardés !"
+    }
+  }
+  

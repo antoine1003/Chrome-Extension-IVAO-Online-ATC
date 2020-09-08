@@ -6,26 +6,46 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css styles/main.css -->
-    <link href="styles/main.css" rel="stylesheet">
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
     <!-- endbuild -->
   </head>
   <body>
-    Favorite color:
-    <select id="color">
-     <option value="red">red</option>
-     <option value="green">green</option>
-     <option value="blue">blue</option>
-     <option value="yellow">yellow</option>
-    </select>
-    
-    <label>
-      <input type="checkbox" id="like">
-      I like colors.
-    </label>
-    
-    <div id="status"></div>
-    <button id="save">Save</button>
-
+    <div class="col-md-6 offset-md-3">
+      <h1 class="mb-4">ATC Online parameters</h1>
+      <div class="parameters">
+          <div class="form-group row">
+            <label for="atc-list" class="col-4 col-form-label">ATC list</label> 
+            <div class="col-8">
+              <textarea id="atc-list" name="atc-list" cols="40" rows="5" class="form-control" aria-describedby="atc-listHelpBlock"></textarea> 
+              <span id="atc-listHelpBlock" class="form-text text-muted">Separated by comma. eg. LFRS_TWR,LFBD_APP</span>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="interval" class="col-4 col-form-label">Interval</label> 
+            <div class="col-8">
+              <select id="interval" name="interval" class="custom-select">
+                <option value="5">5 min</option>
+                <option value="10">10 min</option>
+                <option value="15">15 min</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-4 col-form-label"></div>
+            <label>
+              <input type="checkbox" value="" id="notifications" name="notification">
+                Notification
+            </label>
+          </div>
+          <div class="form-group row">
+            <div class="offset-4 col-8">
+              <button name="save" id="save" class="btn btn-primary">Save</button>
+            </div>
+          </div>
+      </div>
+      
+      <div id="status" class="alert alert-success d-none"></div>
+    </div>
     <!-- build:js scripts/options.js -->
     <script src="scripts/options.js"></script>
     <!-- endbuild -->

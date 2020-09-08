@@ -1,69 +1,116 @@
-"use strict";
+'use strict';
 
 chrome.runtime.onInstalled.addListener(() => {
-  console.log("onInstalled...");
-  chrome.browserAction.setTitle({ title: "My New Title" });
-  // create alarm after extension is installed / upgraded
-  chrome.alarms.create("refresh", { periodInMinutes: 1 });
+  chrome.storage.sync.get(['interval'], function (result) {
+    const intervalInt = parseInt(result.interval);
+    // create alarm after extension is installed / upgraded
+    chrome.alarms.create('refresh', { periodInMinutes: intervalInt });
+  });
   getStatusOfAtc();
 });
 
 chrome.alarms.onAlarm.addListener((alarm) => {
   console.log(alarm.name); // refresh
-  if (alarm.name === "refresh") {
+  if (alarm.name === 'refresh') {
     helloWorld();
   }
 });
 
 function getStatusOfAtc() {
-  const positionList = ["LFRS_APP", "LFBD_TWR", "DTTA_TWR", "LFBB_CTR"];
   const REGEX_NO_OBS = /^((?!OBS).)*$/;
-  const WAZZUP_URL = "http://api.ivao.aero/getdata/whazzup/whazzup.txt";
-  Papa.parse(WAZZUP_URL, {
-    download: true,
-    delimiter: ":",
-    complete: function (results) {
-      const openAtc = [];
-      for (let i = 8; i < results.data.length; i++) {
-        const obj = results.data[i];
-        const callsign = obj[0];
-        if (obj[3] === "ATC" && callsign.match(REGEX_NO_OBS)) {
-          openAtc.push(callsign);
-        }
-      }
+  const WAZZUP_URL = 'http://api.ivao.aero/getdata/whazzup/whazzup.txt';
 
-      let result = {};
-      for (let j = 0; j < positionList.length; j++) {
-        const element = positionList[j];
-        if (openAtc.includes(element)) {
-          result[element] = true;
-        } else {
-          result[element] = false;
-        }
-      }
-      console.log(result);
-    },
+  chrome.storage.sync.get(['atcList'], function (result) {
+    const atcList = result.atcList;
+    const positionList = atcList.split(',');
+    if (positionList.length > 0) {      
+      Papa.parse(WAZZUP_URL, {
+        download: true,
+        delimiter: ':',
+        complete: function (results) {
+          const openAtc = [];
+          for (let i = 8; i < results.data.length; i++) {
+            const obj = results.data[i];
+            const callsign = obj[0];
+            if (obj[3] === 'ATC' && callsign.match(REGEX_NO_OBS)) {
+              openAtc.push(callsign);
+            }
+          }
+
+          let listOfAtc = [];
+          for (let j = 0; j < positionList.length; j++) {
+            let obj = {};
+            const position = positionList[j];
+            obj.position = position;
+            if (openAtc.includes(position)) {
+              obj.isOpen = true;
+            } else {
+              obj.isOpen = false;
+            }
+            listOfAtc.push(obj);
+          }
+          handleResults(listOfAtc);
+        },
+      });
+    }
   });
 }
 
-function name(params) {}
+function handleResults(results) {
+  if (getNbOpenAtc(results) > 0) {
+    iconIsOnline();
+  } else {
+    iconIsOffline();
+  }
+}
+
+function hasFullStaff(results) {
+
+}
+
+/**
+ *
+ * @param results
+ * @returns integer
+ */
+function getNbOpenAtc(results) {
+  return results.filter(el  => el.isOpen === true).length;
+}
 
 function helloWorld() {
   let now = new Date();
   console.log(now.toString());
-  chrome.runtime.sendMessage({ msg: "hello there" });
+  iconIsOnline();
+  showNotification();
+}
+// -------------------------- BADGE --------------------------
+function badgeFullStaff() {
+  chrome.browserAction.setBadgeText({text: 'F'});
+}
+
+function badgeReset() {
+
+}
+
+function iconIsOnline() {
   chrome.browserAction.setIcon({
     path: {
-      19: "images/online-19.png",
-      38: "images/online-38.png",
+      19: 'images/online-19.png',
+      38: 'images/online-38.png',
     },
   });
-  showNotification();
+}
+
+function iconIsOffline() {
+  chrome.browserAction.setIcon({
+    path: {
+      19: 'images/offline-19.png',
+      38: 'images/offline-38.png',
+    },
+  });
 }
 
 function showNotification() {
-  var openTodos = 3;
-
   if (openTodos > 0) {
     // Now create the notification
     // chrome.notifications.create('reminder', {
