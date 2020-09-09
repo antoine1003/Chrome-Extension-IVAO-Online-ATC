@@ -1,39 +1,36 @@
-"use strict";
+'use strict';
 
 // Saves options to chrome.storage
-function save_options() {
-  var color = document.getElementById("color").value;
-  var likesColor = document.getElementById("like").checked;
-  chrome.storage.sync.set(
-    {
-      favoriteColor: color,
-      likesColor: likesColor,
-    },
-    function () {
+function saveOptions() {
+  const atcList = document.getElementById('atc-list').value;
+  const notifications = document.getElementById('notifications').checked;
+  chrome.storage.sync.set({
+      atcList: atcList,
+      notifications: notifications
+    }, function () {
       // Update status to let user know options were saved.
-      var status = document.getElementById("status");
-      status.textContent = "Options saved.";
+      let status = document.getElementById('status');
+      status.textContent = chrome.i18n.getMessage('parametersSaved');
+      status.classList.remove('d-none');
       setTimeout(function () {
-        status.textContent = "";
-      }, 750);
+        status.classList.add('d-none');
+      }, 1000);
     }
   );
 }
 
 // Restores select box and checkbox state using the preferences
 // stored in chrome.storage.
-function restore_options() {
+function restoreOptions() {
   // Use default value color = 'red' and likesColor = true.
-  chrome.storage.sync.get(
-    {
-      favoriteColor: "red",
-      likesColor: true,
-    },
-    function (items) {
-      document.getElementById("color").value = items.favoriteColor;
-      document.getElementById("like").checked = items.likesColor;
+  chrome.storage.sync.get({
+      atcList: '',
+      notifications: false
+    }, function (items) {
+      document.getElementById('atc-list').value = items.atcList;
+      document.getElementById('notifications').checked = items.notifications;
     }
   );
 }
-document.addEventListener("DOMContentLoaded", restore_options);
-document.getElementById("save").addEventListener("click", save_options);
+document.addEventListener('DOMContentLoaded', restoreOptions);
+document.getElementById('save').addEventListener('click', saveOptions);

@@ -1,25 +1,40 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <!-- build:css styles/popup-vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css styles/main.css -->
-    <link href="styles/main.css" rel="stylesheet">
-    <!-- endbuild -->
-  </head>
-  <body>
-    <h1 class="red">'Allo, 'Allo!</h1>
+<head>
+  <meta charset="utf-8">
+  <!-- build:css styles/popup-vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css styles/main.css -->
+  <link href="styles/bootstrap.min.css" rel="stylesheet">
+  <link href="styles/main.css" rel="stylesheet">
 
-    <!-- build:js scripts/popup-vendor.js -->
-    <!-- bower:js -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <button id="go-to-options">Go to options</button>
-    <!-- build:js scripts/popup.js -->
-    <script src="scripts/popup.js"></script>
-    <!-- endbuild -->
-  </body>
+  <style>
+    body {
+      width: 350px;
+      padding: 15px;
+    }
+  </style>
+  <!-- endbuild -->
+</head>
+<body>
+  <p class="small text-right" id="updated-at"></p>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">Position</th>
+      <th scope="col">Open</th>
+    </tr>
+    </thead>
+    <tbody id="table-atc">
+    </tbody>
+  </table>
+
+  <button id="go-to-options" class="btn btn-info">Go to options</button>
+
+<!-- build:js scripts/popup.js -->
+<script src="scripts/popup.js"></script>
+<!-- endbuild -->
+</body>
 </html>

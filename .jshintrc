@@ -9,6 +9,7 @@
         "EventEmitter": true,
         "Promise": true,
         "chrome": true,
-        "Papa": true
+        "Papa": true,
+        "documment": true
     }
 }

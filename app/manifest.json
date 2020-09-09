@@ -5,6 +5,7 @@
   "description": "__MSG_appDescription__",
   "icons": {
     "16": "images/offline-16.png",
+    "48": "images/offline-48.png",
     "128": "images/offline-128.png"
   },
   "default_locale": "en",
@@ -12,6 +13,7 @@
     "scripts": [
       "libs/polyfill.min.js",
       "libs/papaparse.min.js",
+      "libs/moment.min.js",
       "scripts/chromereload.js",
       "scripts/background.js"
     ]

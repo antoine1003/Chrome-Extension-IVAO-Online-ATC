@@ -1,20 +1,27 @@
 'use strict';
 
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.get(['interval'], function (result) {
-    const intervalInt = parseInt(result.interval);
-    // create alarm after extension is installed / upgraded
-    chrome.alarms.create('refresh', { periodInMinutes: intervalInt });
-  });
-  getStatusOfAtc();
+    chrome.alarms.create('refresh', { periodInMinutes: 15 });
+    getStatusOfAtc();
+    moment.locale(getLocale());
 });
 
 chrome.alarms.onAlarm.addListener((alarm) => {
   console.log(alarm.name); // refresh
   if (alarm.name === 'refresh') {
-    helloWorld();
+    getStatusOfAtc();
   }
 });
+
+function getLocale() {
+  let language;
+  if (window.navigator.languages) {
+    language = window.navigator.languages[0];
+  } else {
+    language = window.navigator.userLanguage || window.navigator.language;
+  }
+  return language;
+}
 
 function getStatusOfAtc() {
   const REGEX_NO_OBS = /^((?!OBS).)*$/;
@@ -23,7 +30,7 @@ function getStatusOfAtc() {
   chrome.storage.sync.get(['atcList'], function (result) {
     const atcList = result.atcList;
     const positionList = atcList.split(',');
-    if (positionList.length > 0) {      
+    if (positionList.length > 0) {
       Papa.parse(WAZZUP_URL, {
         download: true,
         delimiter: ':',
@@ -57,14 +64,22 @@ function getStatusOfAtc() {
 }
 
 function handleResults(results) {
-  if (getNbOpenAtc(results) > 0) {
+  const nbAtcOnline = getNbOpenAtc(results);
+  if (nbAtcOnline > 0) {
     iconIsOnline();
+    setBadge(nbAtcOnline);
   } else {
     iconIsOffline();
+    badgeReset();
   }
+  //moment().locale(getLocale());
+  chrome.storage.sync.set({
+    listOfAtcOpenClosed: results,
+    updatedAt: moment().calendar()
+  }, function() {});
 }
 
-function hasFullStaff(results) {
+function getFullStaffPosition(results) {
 
 }
 
@@ -88,8 +103,12 @@ function badgeFullStaff() {
   chrome.browserAction.setBadgeText({text: 'F'});
 }
 
-function badgeReset() {
+function setBadge(value) {
+  chrome.browserAction.setBadgeText({text: value.toString()});
+}
 
+function badgeReset() {
+  chrome.browserAction.setBadgeText({text: ''});
 }
 
 function iconIsOnline() {
@@ -111,7 +130,6 @@ function iconIsOffline() {
 }
 
 function showNotification() {
-  if (openTodos > 0) {
     // Now create the notification
     // chrome.notifications.create('reminder', {
     //     type: 'basic',
@@ -119,7 +137,6 @@ function showNotification() {
     //     title: 'Don\'t forget!',
     //     message: 'You have '+openTodos+' things to do. Wake up, dude!'
     //  }, function(notificationId) {});
-  }
 }
 
 // chrome.browserAction.setBadgeText({text: "BG"});

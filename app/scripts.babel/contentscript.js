@@ -1,3 +1,11 @@
 'use strict';
 
-console.log('\'Allo \'Allo! Content script');
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  if (request.action == "show") {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      chrome.pageAction.show(tabs[0].id);
+    });
+  }
+
+  value1 = request.tElements;
+});
