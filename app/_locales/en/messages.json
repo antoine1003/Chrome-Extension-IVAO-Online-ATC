@@ -36,5 +36,8 @@
   },
   "save": {
     "message": "Save"
+  },
+  "optionsAtcListFeedbackError": {
+    "message": "List can only contain uppercase letter and '_'. Accepted formats : AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
   }
 }

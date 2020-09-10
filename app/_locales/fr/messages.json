@@ -36,5 +36,8 @@
   },
   "save": {
     "message": "Sauvegarder"
+  },
+  "optionsAtcListFeedbackError": {
+    "message": "La liste ne peut contenir que les lettres majuscules et des '_'. Formats acceptés AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
   }
 }
