@@ -1,6 +1,6 @@
 {
   "appName": {
-    "message": "ivao online atc",
+    "message": "IVAO ATC Watcher",
     "description": "The name of the application"
   },
   "appDescription": {
@@ -9,5 +9,32 @@
   },
   "parametersSaved": {
     "message": "Parameters saved !"
+  },
+  "online": {
+    "message": "Online"
+  },
+  "offline": {
+    "message": "Offline"
+  },
+  "goToOptions": {
+    "message": "Go to options"
+  },
+  "status": {
+    "message": "Status"
+  },
+  "noData": {
+    "message": "No data"
+  },
+  "optionsTitle": {
+    "message": "ATC Watcher parameters"
+  },
+  "optionsAtcListLabel": {
+    "message": "ATC list"
+  },
+  "optionsAtcListHelp": {
+    "message": "Separated by comma. eg. LFRS_TWR,LFBD_APP"
+  },
+  "save": {
+    "message": "Save"
   }
 }

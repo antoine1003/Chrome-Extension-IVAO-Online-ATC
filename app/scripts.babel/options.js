@@ -32,5 +32,15 @@ function restoreOptions() {
     }
   );
 }
+
+function initializeTranslations() {
+  document.getElementById('title').innerText = chrome.i18n.getMessage('optionsTitle');
+  document.getElementById('atc-list-label').innerText = chrome.i18n.getMessage('optionsAtcListLabel');
+  document.getElementById('atc-list-help').innerText = chrome.i18n.getMessage('optionsAtcListHelp');
+  document.getElementById('save').innerText = chrome.i18n.getMessage('save');
+}
+
+document.addEventListener('DOMContentLoaded', initializeTranslations);
 document.addEventListener('DOMContentLoaded', restoreOptions);
+
 document.getElementById('save').addEventListener('click', saveOptions);

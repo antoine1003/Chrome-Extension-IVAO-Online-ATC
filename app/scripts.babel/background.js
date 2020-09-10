@@ -1,14 +1,21 @@
 'use strict';
 
+moment.locale(getLocale());
+
 chrome.runtime.onInstalled.addListener(() => {
     chrome.alarms.create('refresh', { periodInMinutes: 15 });
     getStatusOfAtc();
-    moment.locale(getLocale());
 });
 
 chrome.alarms.onAlarm.addListener((alarm) => {
   console.log(alarm.name); // refresh
   if (alarm.name === 'refresh') {
+    getStatusOfAtc();
+  }
+});
+
+chrome.storage.onChanged.addListener(function(changes, namespace) {
+  if (changes.hasOwnProperty('atcList')) {
     getStatusOfAtc();
   }
 });
@@ -28,37 +35,51 @@ function getStatusOfAtc() {
   const WAZZUP_URL = 'http://api.ivao.aero/getdata/whazzup/whazzup.txt';
 
   chrome.storage.sync.get(['atcList'], function (result) {
-    const atcList = result.atcList;
-    const positionList = atcList.split(',');
-    if (positionList.length > 0) {
-      Papa.parse(WAZZUP_URL, {
-        download: true,
-        delimiter: ':',
-        complete: function (results) {
-          const openAtc = [];
-          for (let i = 8; i < results.data.length; i++) {
-            const obj = results.data[i];
-            const callsign = obj[0];
-            if (obj[3] === 'ATC' && callsign.match(REGEX_NO_OBS)) {
-              openAtc.push(callsign);
+    const userAtcList = result.atcList;
+    if (userAtcList) {
+      const userAtcArray = userAtcList.split(',');
+      if (userAtcArray.length > 0) {
+        Papa.parse(WAZZUP_URL, {
+          download: true,
+          delimiter: ':',
+          complete: function (results) {
+            const openAtc = [];
+            const openAtcCallsign = [];
+            for (let i = 8; i < results.data.length; i++) {
+              const obj = results.data[i];
+              const callsign = obj[0];
+              if (obj[3] === 'ATC' && callsign.match(REGEX_NO_OBS)) {
+                openAtcCallsign.push(callsign);
+                let objAtc = {
+                  position: callsign,
+                  grade: obj[41]
+                };
+                openAtc.push(objAtc);
+              }
             }
-          }
 
-          let listOfAtc = [];
-          for (let j = 0; j < positionList.length; j++) {
-            let obj = {};
-            const position = positionList[j];
-            obj.position = position;
-            if (openAtc.includes(position)) {
-              obj.isOpen = true;
-            } else {
-              obj.isOpen = false;
+            let listOfAtc = [];
+            for (let j = 0; j < userAtcArray.length; j++) {
+              const position = userAtcArray[j];
+              let openPositionObj = {};
+              openPositionObj = openAtc.filter(el => el.position === position);
+              console.log("obj", openPositionObj);
+              if (openPositionObj.length === 1) {
+                openPositionObj = openPositionObj[0];
+                openPositionObj.isOpen = true;
+              } else {
+                openPositionObj = {
+                  position: position,
+                  grade: null,
+                  isOpen: false
+                };
+              }
+              listOfAtc.push(openPositionObj);
             }
-            listOfAtc.push(obj);
-          }
-          handleResults(listOfAtc);
-        },
-      });
+            handleResults(listOfAtc);
+          },
+        });
+      }
     }
   });
 }
@@ -83,11 +104,6 @@ function getFullStaffPosition(results) {
 
 }
 
-/**
- *
- * @param results
- * @returns integer
- */
 function getNbOpenAtc(results) {
   return results.filter(el  => el.isOpen === true).length;
 }
@@ -120,6 +136,7 @@ function iconIsOnline() {
   });
 }
 
+// -------------------------- ICON --------------------------
 function iconIsOffline() {
   chrome.browserAction.setIcon({
     path: {
@@ -138,5 +155,3 @@ function showNotification() {
     //     message: 'You have '+openTodos+' things to do. Wake up, dude!'
     //  }, function(notificationId) {});
 }
-
-// chrome.browserAction.setBadgeText({text: "BG"});

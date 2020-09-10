@@ -11,13 +11,13 @@
   </head>
   <body>
     <div class="col-md-6 offset-md-3">
-      <h1 class="mb-4">ATC Online parameters</h1>
+      <h2 class="mb-4" id="title"></h2>
       <div class="parameters">
           <div class="form-group row">
-            <label for="atc-list" class="col-4 col-form-label">ATC list</label> 
+            <label id="atc-list-label" for="atc-list" class="col-4 col-form-label"></label>
             <div class="col-8">
               <textarea id="atc-list" name="atc-list" cols="40" rows="5" class="form-control" aria-describedby="atc-listHelpBlock"></textarea> 
-              <span id="atc-listHelpBlock" class="form-text text-muted">Separated by comma. eg. LFRS_TWR,LFBD_APP</span>
+              <span id="atc-list-help" class="form-text text-muted"></span>
             </div>
           </div>
           <div class="form-group row">

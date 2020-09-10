@@ -1,14 +1,40 @@
 {
-    "appName": {
-      "message": "ivao online atc",
-      "description": "The name of the application"
-    },
-    "appDescription": {
-      "message": "Cette extension permet de savoir quand certaines positions ATC sont ouvertes sur IVAO.",
-      "description": "The description of the application"
-    },
-    "parametersSaved": {
-        "message": "Paramètres sauvegardés !"
-    }
+  "appName": {
+    "message": "IVAO ATC Watcher",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Cette extension permet de savoir quand certaines positions ATC sont ouvertes sur IVAO.",
+    "description": "The description of the application"
+  },
+  "parametersSaved": {
+    "message": "Paramètres sauvegardés !"
+  },
+  "online": {
+    "message": "En ligne"
+  },
+  "offline": {
+    "message": "Hors ligne"
+  },
+  "goToOptions": {
+    "message": "Allez aux options"
+  },
+  "status": {
+    "message": "Statut"
+  },
+  "noData": {
+    "message": "Pas de données"
+  },
+  "optionsTitle": {
+    "message": "Paramètres de ATC Watcher"
+  },
+  "optionsAtcListLabel": {
+    "message": "Liste des positions"
+  },
+  "optionsAtcListHelp": {
+    "message": "Séparé par les virgules. Ex: LFRS_TWR,LFBD_APP"
+  },
+  "save": {
+    "message": "Sauvegarder"
   }
-  
+}
