@@ -5,3 +5,13 @@ body {
 .table td {
   padding: 0.3rem 0.3rem;
 }
+
+.filter-red {
+   filter: invert(34%) sepia(47%) saturate(2855%) hue-rotate(332deg) brightness(86%) contrast(101%);
+  width: 20px;
+}
+
+.filter-green {
+  filter: invert(56%) sepia(14%) saturate(2661%) hue-rotate(82deg) brightness(92%) contrast(78%);
+  width: 20px;
+}

@@ -39,5 +39,17 @@
   },
   "optionsAtcListFeedbackError": {
     "message": "List can only contain uppercase letter and '_'. Accepted formats : AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
+  },
+  "notificationTitle": {
+    "message": "New ATC(s) online !"
+  },
+  "notificationBody": {
+    "message": "Positions $positions are now open !",
+    "placeholders": {
+      "positions": {
+        "content": "$1",
+        "example": "LFRS_APP,LFRB_TWR"
+      }
+    }
   }
 }

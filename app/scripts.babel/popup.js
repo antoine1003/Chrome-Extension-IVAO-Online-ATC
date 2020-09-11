@@ -1,7 +1,5 @@
 'use strict';
 
-console.log('\'Allo \'Allo! Popup');
-
 document.querySelector('#go-to-options').addEventListener('click', function() {
   if (chrome.runtime.openOptionsPage) {
     chrome.runtime.openOptionsPage();
@@ -32,10 +30,10 @@ function buildTable() {
         statusTd.classList.add('text-center');
         if (el.isOpen === true) {
           statusTd.classList.add('table-success');
-          statusTd.innerHTML = '<i class="fa fa-check text-success" aria-hidden="true"></i>';
+          statusTd.innerHTML = '<img src="images/check.svg" class="filter-green"/>';
         } else {
           statusTd.classList.add('table-danger');
-          statusTd.innerHTML = '<i class="fa fa-times text-danger" aria-hidden="true"></i>';
+          statusTd.innerHTML = '<img src="images/cross.svg" class="filter-red"/>';
         }
         trEl.appendChild(statusTd);
         let img = null;

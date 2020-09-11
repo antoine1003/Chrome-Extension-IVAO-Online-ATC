@@ -39,5 +39,17 @@
   },
   "optionsAtcListFeedbackError": {
     "message": "La liste ne peut contenir que les lettres majuscules et des '_'. Formats acceptés AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
+  },
+  "notificationTitle": {
+    "message": "Nouvelle(s) position(s) en ligne !"
+  },
+  "notificationBody": {
+    "message": "Les positions $positions$ sont maintenant ouvertes !",
+    "placeholders": {
+      "positions": {
+        "content": "$1",
+        "example": "LFRS_APP,LFRB_TWR"
+      }
+    }
   }
 }

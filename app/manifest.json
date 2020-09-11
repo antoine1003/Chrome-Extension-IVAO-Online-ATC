@@ -19,7 +19,7 @@
     ]
   },
   "permissions": [
-    "http://api.ivao.aero/getdata/whazzup/whazzup.txt",
+    "https://api.ivao.aero/getdata/whazzup/whazzup.txt",
     "background",
     "notifications",
     "storage",
