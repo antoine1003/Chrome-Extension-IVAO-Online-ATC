@@ -10,6 +10,8 @@ document.querySelector('#go-to-options').addEventListener('click', function() {
 
 function initializeTranslations() {
   document.getElementById('go-to-options').innerText = chrome.i18n.getMessage('goToOptions');
+  document.getElementById('col-position').innerText = chrome.i18n.getMessage('position');
+  document.getElementById('col-grade').innerText = chrome.i18n.getMessage('grade');
 }
 
 function buildTable() {

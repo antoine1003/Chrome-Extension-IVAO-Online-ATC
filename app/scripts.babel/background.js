@@ -1,11 +1,15 @@
 'use strict';
 
-moment.locale(getLocale());
-
 chrome.runtime.onInstalled.addListener(() => {
+    moment.locale(getLocale());
     chrome.alarms.create('refresh', { periodInMinutes: 15 });
     getStatusOfAtc();
 });
+
+chrome.runtime.onStartup.addListener(() => {
+  moment.locale(getLocale());
+});
+
 
 chrome.alarms.onAlarm.addListener((alarm) => {
   if (alarm.name === 'refresh') {

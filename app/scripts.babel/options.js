@@ -57,6 +57,7 @@ function initializeTranslations() {
   document.getElementById('atc-list-help').innerText = chrome.i18n.getMessage('optionsAtcListHelp');
   document.getElementById('atc-list-feedback-error').innerText = chrome.i18n.getMessage('optionsAtcListFeedbackError');
   document.getElementById('save').innerText = chrome.i18n.getMessage('save');
+  document.getElementById('notifications-label').innerText = chrome.i18n.getMessage('notifications');
 }
 
 /**

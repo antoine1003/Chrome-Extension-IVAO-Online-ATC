@@ -10,6 +10,15 @@
   "parametersSaved": {
     "message": "Paramètres sauvegardés !"
   },
+  "notifications": {
+    "message": "Notifications"
+  },
+  "grade": {
+    "message": "Grade"
+  },
+  "position": {
+    "message": "Position"
+  },
   "online": {
     "message": "En ligne"
   },
