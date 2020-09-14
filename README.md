@@ -1,9 +1,9 @@
 # IVAO ATC Watcher - Chrome Extension
 
-![Logo](app/images/online-48.png)
+![Logo](app/images/online-48.png) ![](https://img.shields.io/github/v/release/antoine1003/Chrome-Extension-IVAO-Online-ATC?style=plastic)
+
 
 This extension allows people to know when some ATC are online on IVAO.
-
 ## Installation
 
 Just go to the google chrome extension and install it.
