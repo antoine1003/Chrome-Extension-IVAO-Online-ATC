@@ -1,0 +1,73 @@
+{
+  "appName": {
+    "message": "IVAO Visualizador ATC",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Essa extensão permite saber quando algum ATC está online.",
+    "description": "The description of the application"
+  },
+  "parametersSaved": {
+    "message": "Parâmetros salvos!"
+  },
+  "notifications": {
+    "message": "Notificações"
+  },
+  "grade": {
+    "message": "Patente"
+  },
+  "position": {
+    "message": "Posição"
+  },
+  "online": {
+    "message": "Online"
+  },
+  "offline": {
+    "message": "Offline"
+  },
+  "goToOptions": {
+    "message": "Ir para Configurações"
+  },
+  "status": {
+    "message": "Status"
+  },
+  "noData": {
+    "message": "Sem dados"
+  },
+  "optionsTitle": {
+    "message": "Parâmetros do Visualizador ATC"
+  },
+  "optionsAtcListLabel": {
+    "message": "Lista de ATC"
+  },
+  "optionsAtcListHelp": {
+    "message": "Separados por vírgula (p. ex. SBBR_TWR,SBRJ_TWR)"
+  },
+  "save": {
+    "message": "Salvar"
+  },
+  "optionsAtcListFeedbackError": {
+    "message": "A lista deve conter apenas letras maiúsculas e sublinhas ('_'). Formatos aceitos: AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC."
+  },
+  "notificationTitle": {
+    "message": "Um novo ATC está online!"
+  },
+  "notificationBody": {
+    "message": "A posição $position foi aberta!",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "SBBR_TWR"
+      }
+    }
+  },
+  "notificationBodyPlural": {
+    "message": "As posições $position foram abertas!",
+    "placeholders": {
+      "positions": {
+        "content": "$1",
+        "example": "LFRS_APP,LFRB_TWR"
+      }
+    }
+  }
+}

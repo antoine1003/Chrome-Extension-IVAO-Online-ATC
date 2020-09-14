@@ -1,7 +1,7 @@
 'use strict';
 
 chrome.runtime.onInstalled.addListener(() => {
-  console.log('onInstalled', getLocale());
+    console.log('onInstalled', getLocale());
     moment.locale(getLocale());
     chrome.alarms.create('refresh', { periodInMinutes: 15 });
     getStatusOfAtc();
@@ -56,12 +56,10 @@ function getStatusOfAtc() {
           delimiter: ':',
           complete: function (results) {
             const openAtc = [];
-            const openAtcCallsign = [];
             for (let i = 8; i < results.data.length; i++) {
               const obj = results.data[i];
               const callsign = obj[0];
               if (obj[3] === 'ATC' && callsign.match(REGEX_NO_OBS)) {
-                openAtcCallsign.push(callsign);
                 let objAtc = {
                   position: callsign,
                   grade: obj[41],

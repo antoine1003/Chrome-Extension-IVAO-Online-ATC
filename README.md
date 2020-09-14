@@ -21,7 +21,7 @@ Please make sure to update tests as appropriate.
 
 ### Language
 
-For now the plugin is in *english, french, portugese*. You can add or help with translations in your native language here : https://poeditor.com/join/project?hash=sXcQfqtqFG
+For now the plugin is in *english, french, portugese (PT & BR)*. You can add or help with translations in your native language here : https://poeditor.com/join/project?hash=sXcQfqtqFG
 
 ## License
 [GNU AGPL v3](https://choosealicense.com/licenses/agpl-3.0/)
