@@ -69,7 +69,7 @@ function atcListValidation() {
   const REGEX_ATC_LIST = /^([A-Z]{4}(_*[A-Z]{0,3})_[A-Z]{3}){1}(,[A-Z]{4}(_*[A-Z]{0,3})_[A-Z]{3})*$/;
   const REGEX_NO_OBS = /^((?!OBS).)*$/;
   let value = document.getElementById('atc-list').value;
-  if(value.match(REGEX_ATC_LIST) && value.match(REGEX_NO_OBS)) {
+  if (value.match(REGEX_ATC_LIST) && value.match(REGEX_NO_OBS)) {
     return true;
   } else {
     return false;

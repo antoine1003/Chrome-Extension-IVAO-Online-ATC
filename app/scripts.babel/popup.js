@@ -32,10 +32,10 @@ function buildTable() {
         statusTd.classList.add('text-center');
         if (el.isOpen === true) {
           statusTd.classList.add('table-success');
-          statusTd.innerHTML = '<img src="images/check.svg" class="filter-green"/>';
+          statusTd.innerHTML = '<img alt="Checked icon" src="images/check.svg" class="filter-green"/>';
         } else {
           statusTd.classList.add('table-danger');
-          statusTd.innerHTML = '<img src="images/cross.svg" class="filter-red"/>';
+          statusTd.innerHTML = '<img alt="Cross icon" src="images/cross.svg" class="filter-red"/>';
         }
         trEl.appendChild(statusTd);
         let img = null;
