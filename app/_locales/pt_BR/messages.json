@@ -1,23 +1,23 @@
 {
   "appName": {
-    "message": "IVAO ATC Watcher",
+    "message": "IVAO Visualizador ATC",
     "description": "The name of the application"
   },
   "appDescription": {
-    "message": "This extension allows people to know when some ATC are online.",
+    "message": "Essa extensão permite saber quando algum ATC está online.",
     "description": "The description of the application"
   },
   "parametersSaved": {
-    "message": "Parameters saved !"
+    "message": "Parâmetros salvos!"
   },
   "notifications": {
-    "message": "Notifications"
+    "message": "Notificações"
   },
   "grade": {
-    "message": "Grade"
+    "message": "Patente"
   },
   "position": {
-    "message": "Position"
+    "message": "Posição"
   },
   "online": {
     "message": "Online"
@@ -26,43 +26,43 @@
     "message": "Offline"
   },
   "goToOptions": {
-    "message": "Go to options"
+    "message": "Ir para Configurações"
   },
   "status": {
     "message": "Status"
   },
   "noData": {
-    "message": "No data"
+    "message": "Sem dados"
   },
   "optionsTitle": {
-    "message": "ATC Watcher parameters"
+    "message": "Parâmetros do Visualizador ATC"
   },
   "optionsAtcListLabel": {
-    "message": "ATC list"
+    "message": "Lista de ATC"
   },
   "optionsAtcListHelp": {
-    "message": "Separated by comma. eg. LFRS_TWR,LFBD_APP"
+    "message": "Separados por vírgula (p. ex. SBBR_TWR,SBRJ_TWR)"
   },
   "save": {
-    "message": "Save"
+    "message": "Salvar"
   },
   "optionsAtcListFeedbackError": {
-    "message": "List can only contain uppercase letter and '_'. Accepted formats : AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
+    "message": "A lista deve conter apenas letras maiúsculas e sublinhas ('_'). Formatos aceitos: AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC."
   },
   "notificationTitle": {
-    "message": "New ATC(s) online !"
+    "message": "Um novo ATC está online!"
   },
   "notificationBody": {
-    "message": "Position $position is now open !",
+    "message": "A posição $position foi aberta!",
     "placeholders": {
       "position": {
         "content": "$1",
-        "example": "LFRS_APP"
+        "example": "SBBR_TWR"
       }
     }
   },
   "notificationBodyPlural": {
-    "message": "Positions $positions are now open !",
+    "message": "As posições $position foram abertas!",
     "placeholders": {
       "positions": {
         "content": "$1",

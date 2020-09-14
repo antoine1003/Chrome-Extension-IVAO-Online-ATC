@@ -4,11 +4,11 @@
     "description": "The name of the application"
   },
   "appDescription": {
-    "message": "This extension allows people to know when some ATC are online.",
+    "message": "Cette extension permet de savoir quand certaines positions ATC sont ouvertes sur IVAO.",
     "description": "The description of the application"
   },
   "parametersSaved": {
-    "message": "Parameters saved !"
+    "message": "Paramètres sauvegardés !"
   },
   "notifications": {
     "message": "Notifications"
@@ -20,40 +20,40 @@
     "message": "Position"
   },
   "online": {
-    "message": "Online"
+    "message": "En ligne"
   },
   "offline": {
-    "message": "Offline"
+    "message": "Hors ligne"
   },
   "goToOptions": {
-    "message": "Go to options"
+    "message": "Allez aux options"
   },
   "status": {
-    "message": "Status"
+    "message": "Statut"
   },
   "noData": {
-    "message": "No data"
+    "message": "Pas de données"
   },
   "optionsTitle": {
-    "message": "ATC Watcher parameters"
+    "message": "Paramètres de ATC Watcher"
   },
   "optionsAtcListLabel": {
-    "message": "ATC list"
+    "message": "Liste des positions"
   },
   "optionsAtcListHelp": {
-    "message": "Separated by comma. eg. LFRS_TWR,LFBD_APP"
+    "message": "Séparé par les virgules. Ex: LFRS_TWR,LFBD_APP"
   },
   "save": {
-    "message": "Save"
+    "message": "Sauvegarder"
   },
   "optionsAtcListFeedbackError": {
-    "message": "List can only contain uppercase letter and '_'. Accepted formats : AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
+    "message": "La liste ne peut contenir que les lettres majuscules et des '_'. Formats acceptés AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
   },
   "notificationTitle": {
-    "message": "New ATC(s) online !"
+    "message": "Nouvelle(s) position(s) en ligne !"
   },
   "notificationBody": {
-    "message": "Position $position is now open !",
+    "message": "La position $position$ est maintenant ouverte !",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -62,7 +62,7 @@
     }
   },
   "notificationBodyPlural": {
-    "message": "Positions $positions are now open !",
+    "message": "Les positions $positions sont maintenant ouvertes !",
     "placeholders": {
       "positions": {
         "content": "$1",

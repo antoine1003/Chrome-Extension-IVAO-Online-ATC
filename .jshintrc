@@ -1,0 +1,15 @@
+{
+    "esnext": false,
+    "esversion": 6,
+    "moz": true,
+    "boss": true,
+    "node": true,
+    "validthis": true,
+    "globals": {
+        "EventEmitter": true,
+        "Promise": true,
+        "chrome": true,
+        "Papa": true,
+        "documment": true
+    }
+}
