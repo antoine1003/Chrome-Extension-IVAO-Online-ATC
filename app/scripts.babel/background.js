@@ -1,12 +1,14 @@
 'use strict';
 
 chrome.runtime.onInstalled.addListener(() => {
+  console.log('onInstalled', getLocale());
     moment.locale(getLocale());
     chrome.alarms.create('refresh', { periodInMinutes: 15 });
     getStatusOfAtc();
 });
 
 chrome.runtime.onStartup.addListener(() => {
+  console.log('onStartup', getLocale());
   moment.locale(getLocale());
 });
 

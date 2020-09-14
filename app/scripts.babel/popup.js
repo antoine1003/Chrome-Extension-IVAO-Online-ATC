@@ -41,6 +41,7 @@ function buildTable() {
         let img = null;
         let imgTd = document.createElement('td');
         if (el.grade !== null) {
+          imgTd.classList.add('text-center');
           img = document.createElement('img');
           img.setAttribute('src', 'images/grades/' + el.grade + '.gif');
           imgTd.appendChild(img);
