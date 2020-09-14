@@ -1,14 +1,14 @@
 'use strict';
 
 chrome.runtime.onInstalled.addListener(() => {
-    console.log('onInstalled', getLocale());
+    console.debug('onInstalled', getLocale());
     moment.locale(getLocale());
     chrome.alarms.create('refresh', { periodInMinutes: 15 });
     getStatusOfAtc();
 });
 
 chrome.runtime.onStartup.addListener(() => {
-  console.log('onStartup', getLocale());
+  console.debug('onStartup', getLocale());
   moment.locale(getLocale());
 });
 
@@ -48,6 +48,7 @@ function getStatusOfAtc() {
 
   chrome.storage.sync.get(['atcList'], function (result) {
     const userAtcList = result.atcList;
+    console.debug('userAtcList', userAtcList);
     if (userAtcList) {
       const userAtcArray = userAtcList.split(',');
       if (userAtcArray.length > 0) {
@@ -87,6 +88,7 @@ function getStatusOfAtc() {
               }
               listOfAtc.push(openPositionObj);
             }
+            console.debug('listOfAtc', listOfAtc);
             handleResults(listOfAtc);
           },
         });
@@ -101,6 +103,7 @@ function getStatusOfAtc() {
  */
 function handleResults(results) {
   const nbAtcOnline = getNbOpenAtc(results);
+  console.debug('nbAtcOnline', nbAtcOnline);
   if (nbAtcOnline > 0) {
     iconIsOnline();
     setBadge(nbAtcOnline);
@@ -114,12 +117,13 @@ function handleResults(results) {
         const now = moment(new Date()); //todays date
         const duration = moment.duration(now.diff(openAt));
         const minutes = duration.asMinutes();
-        console.log('minutes', minutes);
+        console.debug(obj.position + ' open for ', minutes);
         if (minutes <= 15) {
           openLessThanXMinutes.push(obj);
         }
       }
     }
+    console.debug('openLessThanXMinutes', openLessThanXMinutes);
     if (openLessThanXMinutes.length > 0) {
       chrome.storage.sync.get(['notifications'], function (result) {
         const notifications = result.notifications;
