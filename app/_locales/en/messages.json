@@ -44,6 +44,15 @@
     "message": "New ATC(s) online !"
   },
   "notificationBody": {
+    "message": "Position $position is now open !",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "LFRS_APP"
+      }
+    }
+  },
+  "notificationBodyPlural": {
     "message": "Positions $positions are now open !",
     "placeholders": {
       "positions": {

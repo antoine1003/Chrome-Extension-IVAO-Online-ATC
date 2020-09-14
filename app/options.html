@@ -10,9 +10,11 @@
     <!-- endbuild -->
   </head>
   <body>
-    <div class="col-md-6 offset-md-3">
-      <h2 class="mb-4" id="title"></h2>
-      <div class="parameters">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <h2 class="mb-4 mt-3" id="title"></h2>
+        <div class="parameters">
           <div class="form-group row">
             <label id="atc-list-label" for="atc-list" class="col-4 col-form-label"></label>
             <div class="col-8">
@@ -25,7 +27,7 @@
             <div class="col-4 col-form-label"></div>
             <label>
               <input type="checkbox" value="" id="notifications" name="notification">
-                Notification
+              Notification
             </label>
           </div>
           <div class="form-group row">
@@ -33,10 +35,12 @@
               <button name="save" id="save" class="btn btn-primary">Save</button>
             </div>
           </div>
+        </div>
+        <div id="status" class="alert alert-success d-none"></div>
       </div>
-      
-      <div id="status" class="alert alert-success d-none"></div>
     </div>
+  </div>
+
     <!-- build:js scripts/options.js -->
     <script src="scripts/options.js"></script>
     <!-- endbuild -->

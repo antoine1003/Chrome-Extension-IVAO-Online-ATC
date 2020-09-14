@@ -1,6 +1,8 @@
 'use strict';
 
-// Saves options to chrome.storage
+/**
+ * Save options to chrome storage
+ */
 function saveOptions() {
   let atcListEl = document.getElementById('atc-list');
   let feedback = document.getElementById('atc-list-feedback-error');
@@ -32,10 +34,10 @@ function saveOptions() {
   }
 }
 
-// Restores select box and checkbox state using the preferences
-// stored in chrome.storage.
+/**
+ * Get stored value (or default) and display them on page loaded
+ */
 function restoreOptions() {
-  // Use default value color = 'red' and likesColor = true.
   chrome.storage.sync.get({
       atcList: '',
       notifications: false
@@ -46,6 +48,9 @@ function restoreOptions() {
   );
 }
 
+/**
+ * Initialize page translation
+ */
 function initializeTranslations() {
   document.getElementById('title').innerText = chrome.i18n.getMessage('optionsTitle');
   document.getElementById('atc-list-label').innerText = chrome.i18n.getMessage('optionsAtcListLabel');
@@ -54,10 +59,16 @@ function initializeTranslations() {
   document.getElementById('save').innerText = chrome.i18n.getMessage('save');
 }
 
+/**
+ * Verify if the atc input list is well formatted.
+ * Accepted input AAAA_AA_AAA, BBBB_BBB, CCCC_CCC_CCC
+ * @returns {boolean}
+ */
 function atcListValidation() {
-  const REGEX_ATC_LIST = /^([A-Z]{4}((_*[A-Z]{0,3}))_[A-Z]{3},*)+$/;
+  const REGEX_ATC_LIST = /^([A-Z]{4}(_*[A-Z]{0,3})_[A-Z]{3}){1}(,[A-Z]{4}(_*[A-Z]{0,3})_[A-Z]{3})*$/;
+  const REGEX_NO_OBS = /^((?!OBS).)*$/;
   let value = document.getElementById('atc-list').value;
-  if(value.match(REGEX_ATC_LIST)) {
+  if(value.match(REGEX_ATC_LIST) && value.match(REGEX_NO_OBS)) {
     return true;
   } else {
     return false;

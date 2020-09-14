@@ -8,7 +8,6 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 chrome.alarms.onAlarm.addListener((alarm) => {
-  console.log(alarm.name); // refresh
   if (alarm.name === 'refresh') {
     getStatusOfAtc();
   }
@@ -20,6 +19,10 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
   }
 });
 
+/**
+ * Retrieve locale of the browser
+ * @returns {string}
+ */
 function getLocale() {
   let language;
   if (window.navigator.languages) {
@@ -30,6 +33,9 @@ function getLocale() {
   return language;
 }
 
+/**
+ * Main function that will fetch online people, set open ATC to an array and then compare it with the required watch ATC positions.
+ */
 function getStatusOfAtc() {
   const REGEX_NO_OBS = /^((?!OBS).)*$/;
   const WAZZUP_URL = 'https://api.ivao.aero/getdata/whazzup/whazzup.txt' + '?_='+ (new Date()).getTime();
@@ -85,6 +91,10 @@ function getStatusOfAtc() {
   });
 }
 
+/**
+ * Update Ui if needed : Badge or notifications.
+ * @param results Array of position
+ */
 function handleResults(results) {
   const nbAtcOnline = getNbOpenAtc(results);
   if (nbAtcOnline > 0) {
@@ -106,23 +116,30 @@ function handleResults(results) {
         }
       }
     }
-    chrome.storage.sync.get(['notifications'], function (result) {
-      const notifications = result.notifications;
-      if (notifications === true) {
-        showNotification(openLessThanXMinutes);
-      }
-    });
+    if (openLessThanXMinutes.length > 0) {
+      chrome.storage.sync.get(['notifications'], function (result) {
+        const notifications = result.notifications;
+        if (notifications === true) {
+          showNotification(openLessThanXMinutes);
+        }
+      });
+    }
+
   } else {
     iconIsOffline();
     badgeReset();
   }
-  //moment().locale(getLocale());
+
   chrome.storage.sync.set({
     listOfAtcOpenClosed: results,
     updatedAt: moment().calendar()
   }, function() {});
 }
 
+/**
+ * TODO: Add functionality to spot full staff
+ * @param results
+ */
 function getFullStaffPosition(results) {
 
 }
@@ -144,6 +161,8 @@ function badgeReset() {
   chrome.browserAction.setBadgeText({text: ''});
 }
 
+// -------------------------- ICON --------------------------
+
 function iconIsOnline() {
   chrome.browserAction.setIcon({
     path: {
@@ -153,7 +172,6 @@ function iconIsOnline() {
   });
 }
 
-// -------------------------- ICON --------------------------
 function iconIsOffline() {
   chrome.browserAction.setIcon({
     path: {
@@ -164,14 +182,20 @@ function iconIsOffline() {
 }
 
 function showNotification(positionLists) {
+  console.debug('positionLists', positionLists);
   const title = chrome.i18n.getMessage('notificationTitle');
   const positionsNameArray = positionLists.map(el => el.position);
   const positionsConcat = positionsNameArray.join(',');
-  const body = chrome.i18n.getMessage('notificationBody', [positionsConcat]);
-    chrome.notifications.create('reminder', {
-        type: 'basic',
-        iconUrl: 'images/online-128.png',
-        title: title,
-        message: body
-     }, function(notificationId) {});
+  let body = '';
+  if (positionLists.length === 1) {
+    body = chrome.i18n.getMessage('notificationBody', [positionsConcat]);
+  } else {
+    body = chrome.i18n.getMessage('notificationBodyPlural', [positionsConcat]);
+  }
+  chrome.notifications.create('reminder', {
+      type: 'basic',
+      iconUrl: 'images/online-128.png',
+      title: title,
+      message: body
+   }, function(notificationId) {});
 }
