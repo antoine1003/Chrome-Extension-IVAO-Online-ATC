@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "مراقب IVAO ATC"
+  },
+  "appDescription": {
+    "message": "يتيح هذا التطبيق للأعضاء معرفة متى تكون بعض ATC متصلة بالإنترنت."
+  },
+  "parametersSaved": {
+    "message": "تم حفظ المعلمات!"
+  },
+  "notifications": {
+    "message": "إشعار"
+  },
+  "grade": {
+    "message": "رتبة"
+  },
+  "position": {
+    "message": "موقع"
+  },
+  "online": {
+    "message": "متصل بالشبكة"
+  },
+  "offline": {
+    "message": "غير متصل بالشبكة"
+  },
+  "goToOptions": {
+    "message": "الخيارات"
+  },
+  "status": {
+    "message": "الوضع"
+  },
+  "noData": {
+    "message": "لا توجد معلومات"
+  },
+  "optionsTitle": {
+    "message": "معلومات مراقب الحركة الجوية"
+  },
+  "optionsAtcListLabel": {
+    "message": "لائحة المراقبين المتاحة"
+  },
+  "optionsAtcListHelp": {
+    "message": "مفرقة بالفاصلة، مثال LFRS_TWR,LFBD_APP"
+  },
+  "save": {
+    "message": "حفظ"
+  },
+  "optionsAtcListFeedbackError": {
+    "message": "هذه اللائحة يمكن ان تتضمن فقط احرف انجليزية بالصيغة الكبيرة \nمثال AAAA_AAA, BBBB_BB_BB "
+  },
+  "notificationTitle": {
+    "message": "اتصل مراقب جديد"
+  },
+  "notificationBody": {
+    "message": "موقع $position$ الان موجود",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "LFRS_APP"
+      }
+    }
+  },
+  "notificationBodyPlural": {
+    "message": "موقع $positions$ الان موجود",
+    "placeholders": {
+      "positions": {
+        "content": "$1",
+        "example": "LFRS_APP,LFRB_TWR"
+      }
+    }
+  }
+}
