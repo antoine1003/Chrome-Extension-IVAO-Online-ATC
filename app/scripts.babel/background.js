@@ -27,7 +27,7 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
 
 chrome.notifications.onClicked.addListener(function(notificationId) {
   const URL_WEBEYE = 'https://webeye.ivao.aero/';
-  if (notificationId === 'new-atc-online') {
+  if (notificationId.includes('new-atc-online')) {
     chrome.tabs.create({ url: URL_WEBEYE });
   }
 });
@@ -210,10 +210,14 @@ function showNotification(positionLists) {
   } else {
     body = chrome.i18n.getMessage('notificationBodyPlural', [positionsConcat]);
   }
-  chrome.notifications.create('new-atc-online', {
+  console.debug('new-atc-online body', body);
+  console.debug('new-atc-online title', title);
+  chrome.notifications.create(`new-atc-online-${Date.now()}`, {
       type: 'basic',
       iconUrl: 'images/online-128.png',
       title: title,
       message: body
-   }, function(notificationId) {});
+   }, function(notificationId) {
+    console.debug('notificationId created', chrome.runtime);
+  });
 }
