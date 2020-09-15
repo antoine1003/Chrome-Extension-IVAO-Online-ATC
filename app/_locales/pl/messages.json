@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "IVAO ATC Watcher"
+  },
+  "appDescription": {
+    "message": "To rozszerzenie pozwola ludziom popatrzeć, które ATC są dostępne."
+  },
+  "parametersSaved": {
+    "message": "Ustawienia zapisane !"
+  },
+  "notifications": {
+    "message": "Powiadomienia"
+  },
+  "grade": {
+    "message": "Ranga"
+  },
+  "position": {
+    "message": "Pozycja"
+  },
+  "online": {
+    "message": "Dostępne"
+  },
+  "offline": {
+    "message": "Niedostępne"
+  },
+  "goToOptions": {
+    "message": "Przejdź do opcji"
+  },
+  "status": {
+    "message": "Status"
+  },
+  "noData": {
+    "message": "Brak danych"
+  },
+  "optionsTitle": {
+    "message": "Ustawienia parametrów Obserwatora ATC"
+  },
+  "optionsAtcListLabel": {
+    "message": "Lista ATC"
+  },
+  "optionsAtcListHelp": {
+    "message": "Oddzielone przecinkiem, np. LFRS_TWR,LFBD_APP"
+  },
+  "save": {
+    "message": "Zapisz"
+  },
+  "optionsAtcListFeedbackError": {
+    "message": "Lista może zawierać tylko wielkie litery i '_'. Akceptowane formaty: AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
+  },
+  "notificationTitle": {
+    "message": "Nowe ATC online !"
+  },
+  "notificationBody": {
+    "message": "Pozycja $position$ została właśnie otwarta !",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "LFRS_APP"
+      }
+    }
+  },
+  "notificationBodyPlural": {
+    "message": "Pozycje $positions$ zostały właśnie otwarte !",
+    "placeholders": {
+      "positions": {
+        "content": "$1",
+        "example": "LFRS_APP,LFRB_TWR"
+      }
+    }
+  }
+}
