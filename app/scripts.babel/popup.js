@@ -16,7 +16,7 @@ function initializeTranslations() {
 
 function buildTable() {
   chrome.storage.sync.get(['listOfAtcOpenClosed','updatedAt'], function (result) {
-    const listOfAtcOpenClosed = result.listOfAtcOpenClosed;
+    const listOfAtcOpenClosed = result.listOfAtcOpenClosed.sort(compare);
     const updatedAt = result.updatedAt ? result.updatedAt : '';
     let tableSelector = document.getElementById('table-atc');
     document.getElementById('updated-at').innerText = updatedAt;
@@ -59,6 +59,13 @@ function buildTable() {
       tableSelector.appendChild(trEl);
     }
   });
+}
+
+function compare(a, b) {
+  if (a.position > b.position) return 1;
+  if (b.position > a.position) return -1;
+
+  return 0;
 }
 
 
