@@ -53,7 +53,7 @@
     "message": "Nieuwe ATC(s) online!"
   },
   "notificationBody": {
-    "message": "De positie $position is nu open!",
+    "message": "De positie $position$ is nu open!",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -62,7 +62,7 @@
     }
   },
   "notificationBodyPlural": {
-    "message": "De posities $positions zijn nu open!",
+    "message": "De posities $positions$ zijn nu open!",
     "placeholders": {
       "positions": {
         "content": "$1",

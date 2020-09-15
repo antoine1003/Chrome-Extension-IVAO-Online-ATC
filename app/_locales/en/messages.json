@@ -53,7 +53,7 @@
     "message": "New ATC(s) online !"
   },
   "notificationBody": {
-    "message": "Position $position is now open !",
+    "message": "Position $position$ is now open !",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -62,7 +62,7 @@
     }
   },
   "notificationBodyPlural": {
-    "message": "Positions $positions are now open !",
+    "message": "Positions $positions$ are now open !",
     "placeholders": {
       "positions": {
         "content": "$1",

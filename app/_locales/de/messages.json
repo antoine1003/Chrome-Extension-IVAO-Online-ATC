@@ -53,7 +53,7 @@
     "message": "Neue Lotsen online !"
   },
   "notificationBody": {
-    "message": "Position $position ist jetzt online !",
+    "message": "Position $position$ ist jetzt online !",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -62,7 +62,7 @@
     }
   },
   "notificationBodyPlural": {
-    "message": "Positionen $positions sind jetzt online !",
+    "message": "Positionen $positions$ sind jetzt online !",
     "placeholders": {
       "positions": {
         "content": "$1",
