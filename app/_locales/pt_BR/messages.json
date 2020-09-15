@@ -1,11 +1,9 @@
 {
   "appName": {
-    "message": "IVAO Visualizador ATC",
-    "description": "The name of the application"
+    "message": "IVAO ATC Watcher"
   },
   "appDescription": {
-    "message": "Essa extensão permite saber quando algum ATC está online.",
-    "description": "The description of the application"
+    "message": "Essa extensão permite saber quando algum ATC está online."
   },
   "parametersSaved": {
     "message": "Parâmetros salvos!"

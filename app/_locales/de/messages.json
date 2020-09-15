@@ -1,11 +1,9 @@
 {
   "appName": {
-    "message": "IVAO ATC Monitor",
-    "description": "The name of the application"
+    "message": "IVAO ATC Watcher"
   },
   "appDescription": {
-    "message": "Diese Extension benachrichtigt dich wenn Lotsen online sind.",
-    "description": "The description of the application"
+    "message": "Diese Extension benachrichtigt dich wenn Lotsen online sind."
   },
   "parametersSaved": {
     "message": "Einstellungen gespeichert !"

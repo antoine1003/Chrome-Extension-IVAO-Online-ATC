@@ -1,11 +1,9 @@
 {
   "appName": {
-    "message": "IVAO ATC Watcher",
-    "description": "The name of the application"
+    "message": "IVAO ATC Watcher"
   },
   "appDescription": {
-    "message": "Deze extensie laat mensen weten wanneer bepaalde ATC online komt.",
-    "description": "The description of the application"
+    "message": "Deze extensie laat mensen weten wanneer bepaalde ATC online komt."
   },
   "parametersSaved": {
     "message": "Parameters opgeslagen!"

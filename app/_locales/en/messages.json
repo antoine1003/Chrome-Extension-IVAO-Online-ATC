@@ -1,11 +1,9 @@
 {
   "appName": {
-    "message": "IVAO ATC Watcher",
-    "description": "The name of the application"
+    "message": "IVAO ATC Watcher"
   },
   "appDescription": {
-    "message": "This extension allows people to know when some ATC are online.",
-    "description": "The description of the application"
+    "message": "This extension allows people to know when some ATC are online."
   },
   "parametersSaved": {
     "message": "Parameters saved !"

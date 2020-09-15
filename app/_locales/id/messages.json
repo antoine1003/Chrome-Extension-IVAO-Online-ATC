@@ -1,11 +1,9 @@
 {
   "appName": {
-    "message": "IVAO ATC Watcher",
-    "description": "The name of the application"
+    "message": "IVAO ATC Watcher"
   },
   "appDescription": {
-    "message": "Memberikan informasi saat posisi ATC tertentu sedang kosong.",
-    "description": "The description of the application"
+    "message": "Memberikan informasi saat posisi ATC tertentu sedang kosong."
   },
   "parametersSaved": {
     "message": "Parameter disimpan !"

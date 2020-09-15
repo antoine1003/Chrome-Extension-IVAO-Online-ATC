@@ -1,11 +1,9 @@
 {
   "appName": {
-    "message": "IVAO ATC Watcher",
-    "description": "The name of the application"
+    "message": "IVAO ATC Watcher"
   },
   "appDescription": {
-    "message": "Cette extension permet de savoir quand certaines positions ATC sont ouvertes sur IVAO.",
-    "description": "The description of the application"
+    "message": "Cette extension permet de savoir quand certaines positions ATC sont ouvertes sur IVAO."
   },
   "parametersSaved": {
     "message": "Paramètres sauvegardés !"

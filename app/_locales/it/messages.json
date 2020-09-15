@@ -3,19 +3,19 @@
     "message": "IVAO ATC Watcher"
   },
   "appDescription": {
-    "message": "Esta extensão permite aos membros saber quando determinadas posições ATC estão online"
+    "message": "Questa estensione permette di essere informati sulla presenza di ATC connessi ."
   },
   "parametersSaved": {
-    "message": "Definições Guardadas !"
+    "message": "Parametri salvati !"
   },
   "notifications": {
-    "message": "Notificações"
+    "message": "Notifiche"
   },
   "grade": {
-    "message": "Grau"
+    "message": "Grado"
   },
   "position": {
-    "message": "Posição"
+    "message": "Unità ATC"
   },
   "online": {
     "message": "Online"
@@ -24,34 +24,34 @@
     "message": "Offline"
   },
   "goToOptions": {
-    "message": "Abrir definições"
+    "message": "Vai alle opzioni"
   },
   "status": {
-    "message": "Estado"
+    "message": "Stato"
   },
   "noData": {
-    "message": "Sem dados"
+    "message": "Nessun dato"
   },
   "optionsTitle": {
-    "message": "Definições do ATC Watcher"
+    "message": "Parametri ATC Watcher"
   },
   "optionsAtcListLabel": {
     "message": "Lista ATC"
   },
   "optionsAtcListHelp": {
-    "message": "Separados por vírgula, ex. LPPS_TWR,LPHR_APP"
+    "message": "Separati da una virgola, es. LIRF_TWR,LIML_APP"
   },
   "save": {
-    "message": "Guardar"
+    "message": "Salva"
   },
   "optionsAtcListFeedbackError": {
-    "message": "A lista só pode conter letras maiusculas e '_'. Formatos aceites: AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
+    "message": "La lista deve contenere solo lettere maiuscole e '_'. Formati accettati: AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
   },
   "notificationTitle": {
-    "message": "Novo ATC online !"
+    "message": "Nuovo ATC online !"
   },
   "notificationBody": {
-    "message": "A Posição $position$ está agora aberta !",
+    "message": "L'unità ATC $position$ è ora attiva !",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -60,7 +60,7 @@
     }
   },
   "notificationBodyPlural": {
-    "message": "As Posições $positions$ estão agora abertas !",
+    "message": "Le unità ATC $positions$ sono ora attive !",
     "placeholders": {
       "positions": {
         "content": "$1",
