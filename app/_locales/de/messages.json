@@ -1,0 +1,73 @@
+{
+  "appName": {
+    "message": "IVAO ATC Monitor",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Diese Extension benachrichtigt dich wenn Lotsen online sind.",
+    "description": "The description of the application"
+  },
+  "parametersSaved": {
+    "message": "Einstellungen gespeichert !"
+  },
+  "notifications": {
+    "message": "Benachrichtigung"
+  },
+  "grade": {
+    "message": "Grade"
+  },
+  "position": {
+    "message": "Position"
+  },
+  "online": {
+    "message": "Online"
+  },
+  "offline": {
+    "message": "Offline"
+  },
+  "goToOptions": {
+    "message": "Einstellungen"
+  },
+  "status": {
+    "message": "Status"
+  },
+  "noData": {
+    "message": "Keine Daten"
+  },
+  "optionsTitle": {
+    "message": "ATC Monitor Einstellungen"
+  },
+  "optionsAtcListLabel": {
+    "message": "ATC liste"
+  },
+  "optionsAtcListHelp": {
+    "message": "Kommaseparierte Liste: EDDT_TWR,EDBB_N_APP"
+  },
+  "save": {
+    "message": "Speichern"
+  },
+  "optionsAtcListFeedbackError": {
+    "message": "Die Liste darf nur Großbuchstaben und _ beinhalten. Akzeptierte Formate : AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
+  },
+  "notificationTitle": {
+    "message": "Neue Lotsen online !"
+  },
+  "notificationBody": {
+    "message": "Position $position ist jetzt online !",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "LFRS_APP"
+      }
+    }
+  },
+  "notificationBodyPlural": {
+    "message": "Positionen $positions sind jetzt online !",
+    "placeholders": {
+      "positions": {
+        "content": "$1",
+        "example": "LFRS_APP,LFRB_TWR"
+      }
+    }
+  }
+}
