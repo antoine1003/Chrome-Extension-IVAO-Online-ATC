@@ -1,0 +1,73 @@
+{
+  "appName": {
+    "message": "IVAO ATC Watcher",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Memberikan informasi saat posisi ATC tertentu sedang kosong.",
+    "description": "The description of the application"
+  },
+  "parametersSaved": {
+    "message": "Parameter disimpan !"
+  },
+  "notifications": {
+    "message": "Notifikasi"
+  },
+  "grade": {
+    "message": "Tingkat"
+  },
+  "position": {
+    "message": "Posisi"
+  },
+  "online": {
+    "message": "Terhubung"
+  },
+  "offline": {
+    "message": "Tidak terhubung"
+  },
+  "goToOptions": {
+    "message": "Opsi"
+  },
+  "status": {
+    "message": "Status"
+  },
+  "noData": {
+    "message": "Tidak ada data"
+  },
+  "optionsTitle": {
+    "message": "Parameter"
+  },
+  "optionsAtcListLabel": {
+    "message": "Daftar ATC"
+  },
+  "optionsAtcListHelp": {
+    "message": "Pisahkan ATC station dengan koma, contoh : WARR_APP, WADD_TWR, WIII_DEL"
+  },
+  "save": {
+    "message": "Simpan"
+  },
+  "optionsAtcListFeedbackError": {
+    "message": "Hanya huruf kapital dan garis bawah \"_\".\nContoh : AAAA_AAAA, BBBB_BB_BBB, CCCC_CCC_CCC"
+  },
+  "notificationTitle": {
+    "message": "ATC baru terhubung !"
+  },
+  "notificationBody": {
+    "message": "Posisi $position saat ini sedang kosong !",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "LFRS_APP"
+      }
+    }
+  },
+  "notificationBodyPlural": {
+    "message": "Posisi $positions saat ini sedang kosong !",
+    "placeholders": {
+      "positions": {
+        "content": "$1",
+        "example": "LFRS_APP,LFRB_TWR"
+      }
+    }
+  }
+}

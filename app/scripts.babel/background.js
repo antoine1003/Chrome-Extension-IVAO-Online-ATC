@@ -25,6 +25,13 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
   }
 });
 
+chrome.notifications.onClicked.addListener(function(notificationId) {
+  const URL_WEBEYE = 'https://webeye.ivao.aero/';
+  if (notificationId === 'new-atc-online') {
+    chrome.tabs.create({ url: URL_WEBEYE });
+  }
+});
+
 /**
  * Retrieve locale of the browser
  * @returns {string}
@@ -44,7 +51,7 @@ function getLocale() {
  */
 function getStatusOfAtc() {
   const REGEX_NO_OBS = /^((?!OBS).)*$/;
-  const WAZZUP_URL = 'https://api.ivao.aero/getdata/whazzup/whazzup.txt' + '?_='+ (new Date()).getTime();
+  const URL_WAZZUP_CACHEBUSTER = 'https://api.ivao.aero/getdata/whazzup/whazzup.txt' + '?_='+ (new Date()).getTime();
 
   chrome.storage.sync.get(['atcList'], function (result) {
     const userAtcList = result.atcList;
@@ -52,7 +59,7 @@ function getStatusOfAtc() {
     if (userAtcList) {
       const userAtcArray = userAtcList.split(',');
       if (userAtcArray.length > 0) {
-        Papa.parse(WAZZUP_URL, {
+        Papa.parse(URL_WAZZUP_CACHEBUSTER, {
           download: true,
           delimiter: ':',
           complete: function (results) {
@@ -127,6 +134,7 @@ function handleResults(results) {
     if (openLessThanXMinutes.length > 0) {
       chrome.storage.sync.get(['notifications'], function (result) {
         const notifications = result.notifications;
+        console.log('notifications', notifications);
         if (notifications === true) {
           showNotification(openLessThanXMinutes);
         }
@@ -189,6 +197,8 @@ function iconIsOffline() {
   });
 }
 
+// -------------------------- NOTIFICATION --------------------------
+
 function showNotification(positionLists) {
   console.debug('positionLists', positionLists);
   const title = chrome.i18n.getMessage('notificationTitle');
@@ -200,7 +210,7 @@ function showNotification(positionLists) {
   } else {
     body = chrome.i18n.getMessage('notificationBodyPlural', [positionsConcat]);
   }
-  chrome.notifications.create('reminder', {
+  chrome.notifications.create('new-atc-online', {
       type: 'basic',
       iconUrl: 'images/online-128.png',
       title: title,

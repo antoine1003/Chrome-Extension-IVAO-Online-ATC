@@ -1,0 +1,73 @@
+{
+  "appName": {
+    "message": "IVAO ATC Watcher",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Deze extensie laat mensen weten wanneer bepaalde ATC online komt.",
+    "description": "The description of the application"
+  },
+  "parametersSaved": {
+    "message": "Parameters opgeslagen!"
+  },
+  "notifications": {
+    "message": "Notificatie"
+  },
+  "grade": {
+    "message": "Cijfer"
+  },
+  "position": {
+    "message": "Positie"
+  },
+  "online": {
+    "message": "Online"
+  },
+  "offline": {
+    "message": "Offline"
+  },
+  "goToOptions": {
+    "message": "Ga naar opties"
+  },
+  "status": {
+    "message": "Status"
+  },
+  "noData": {
+    "message": "Geen data"
+  },
+  "optionsTitle": {
+    "message": "ATC Watcher parameters"
+  },
+  "optionsAtcListLabel": {
+    "message": "ATC lijst"
+  },
+  "optionsAtcListHelp": {
+    "message": "Afscheiden door een komma. Bijv. EHAM_TWR,EHRD_APP"
+  },
+  "save": {
+    "message": "Opslaan"
+  },
+  "optionsAtcListFeedbackError": {
+    "message": "Lijst mag alleen hoofdletters en '_' bevatten. Geaccepteerde formats: AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
+  },
+  "notificationTitle": {
+    "message": "Nieuwe ATC(s) online!"
+  },
+  "notificationBody": {
+    "message": "De positie $position is nu open!",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "LFRS_APP"
+      }
+    }
+  },
+  "notificationBodyPlural": {
+    "message": "De posities $positions zijn nu open!",
+    "placeholders": {
+      "positions": {
+        "content": "$1",
+        "example": "LFRS_APP,LFRB_TWR"
+      }
+    }
+  }
+}

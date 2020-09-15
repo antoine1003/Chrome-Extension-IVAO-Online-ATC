@@ -62,7 +62,7 @@
     }
   },
   "notificationBodyPlural": {
-    "message": "Les positions $positions sont maintenant ouvertes !",
+    "message": "Les positions $positions$ sont maintenant ouvertes !",
     "placeholders": {
       "positions": {
         "content": "$1",
