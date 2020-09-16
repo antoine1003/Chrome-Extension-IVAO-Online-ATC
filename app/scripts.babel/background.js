@@ -54,8 +54,10 @@ function getStatusOfAtc() {
   const REGEX_NO_OBS = /^((?!OBS).)*$/;
   const URL_WAZZUP_CACHEBUSTER = 'https://api.ivao.aero/getdata/whazzup/whazzup.txt' + '?_='+ (new Date()).getTime();
 
-  chrome.storage.sync.get(['atcList'], function (result) {
+  chrome.storage.sync.get(['atcList','notificationsFullstaff','fullstaffList'], function (result) {
     const userAtcList = result.atcList;
+    const notificationsFullstaff = result.notificationsFullstaff;
+    const fullstaffList = result.fullstaffList;
     console.debug('userAtcList', userAtcList);
     if (userAtcList) {
       const userAtcArray = userAtcList.split(',');
@@ -100,8 +102,12 @@ function getStatusOfAtc() {
             }
             console.debug('listOfAtc', listOfAtc);
             handleResults(listOfAtc);
-            console.debug('openAtc',openAtc);
-            getFullStaffPosition(openAtc);
+            console.debug('openAtc', openAtc);
+            console.log('notificationsFullstaff', notificationsFullstaff);
+            if (notificationsFullstaff === true) {
+              const fullstaffAirports = getFullStaffPosition(openAtc, fullstaffList);
+              showFullStaffNotification(fullstaffAirports);
+            }
           },
         });
       }
@@ -159,32 +165,32 @@ function handleResults(results) {
 
 /**
  * TODO: Add functionality to spot full staff
- * @param results
+ * @param openPositions
  */
-function getFullStaffPosition(openPositions) {
-  chrome.storage.sync.get(['notificationsFullstaff'], function (result) {
-    const fullstaffArray = result.fullstaffList.split(',');
-    let fullstaffAirports = [];
-    if (fullstaffArray.length > 0) {
-      for (let i = 0; i < FULL_STAFF_LIST.length; i++) {
-        const AIRPORT = FULL_STAFF_LIST[i];
-        let airportObj = {};
-        let openOnCurrentAirport = openPositions.filter((el)  => {
-          if (el.position.includes(AIRPORT)) {
-            return true;
+function getFullStaffPosition(openPositions, fullstaffList) {
+  let fullstaffAirports = [];
+    if (fullstaffList) {
+      const fullstaffArray = fullstaffList.split(',');
+      if (fullstaffArray.length > 0) {
+        for (let i = 0; i < fullstaffArray.length; i++) {
+          const AIRPORT = fullstaffArray[i];
+          let airportObj = {};
+          let openOnCurrentAirport = openPositions.filter((el)  => {
+            if (el.position.includes(AIRPORT)) {
+              return true;
+            }
+            return false;
+          });
+          if (openOnCurrentAirport.length >= 2) {
+            airportObj.airport = AIRPORT;
+            airportObj.positions = openOnCurrentAirport;
+            fullstaffAirports.push(airportObj);
           }
-          return false;
-        });
-        if (openOnCurrentAirport.length >= 2) {
-          airportObj.airport = AIRPORT;
-          airportObj.positions = openOnCurrentAirport;
-          fullstaffAirports.push(airportObj);
         }
       }
+      console.debug('fullstaffAirports', fullstaffAirports);
     }
     return fullstaffAirports;
-    console.debug('fullstaffAirports', fullstaffAirports);
-  });
 }
 
 function getNbOpenAtc(results) {
@@ -247,4 +253,28 @@ function showNotification(positionLists) {
    }, function(notificationId) {
     console.debug('notificationId created', chrome.runtime);
   });
+}
+
+function showFullStaffNotification(airports) {
+  const title = chrome.i18n.getMessage('notificationsFullstaffTitle');
+  console.log('showFullStaffNotification airports', airports);
+  if (airports && airports.length > 0) {
+    let body = '';
+    for (let i = 0; i < airports.length; i++) {
+      const airportObj = airports[i];
+      const positionsNameArray = airportObj.positions.map(el => el.position);
+      const positionsConcat = positionsNameArray.join(',');
+      body += chrome.i18n.getMessage('notificationsFullstaffBodyLine', [airportObj.airport, airportObj.positions.length, positionsConcat]);
+    }
+
+    chrome.notifications.create(`fullstaff-${Date.now()}`, {
+      type: 'basic',
+      iconUrl: 'images/online-128.png',
+      title: title,
+      message: body
+    }, function(notificationId) {
+      console.log(notificationId)
+    });
+  }
+
 }

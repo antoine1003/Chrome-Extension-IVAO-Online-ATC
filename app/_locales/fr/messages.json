@@ -79,5 +79,25 @@
   },
   "notificationsFullstaff": {
     "message": "Activer les notifications pour les fullstaffs."
+  },
+  "notificationsFullstaffTitle": {
+    "message": "Il y a un fullstaff !"
+  },
+  "notificationsFullstaffBodyLine": {
+    "message": "$airports$ a $nbPositions$ positions ouvertes : $positions$ !",
+    "placeholders": {
+      "airports": {
+        "content": "$1",
+        "example": "LFRS"
+      },
+      "nbPositions": {
+        "content": "$2",
+        "example": "3"
+      },
+      "positions": {
+        "content": "$3",
+        "example": "LFRS_GND,LFRS_TWR"
+      }
+    }
   }
 }

@@ -16,7 +16,10 @@ function initializeTranslations() {
 
 function buildTable() {
   chrome.storage.sync.get(['listOfAtcOpenClosed','updatedAt'], function (result) {
-    const listOfAtcOpenClosed = result.listOfAtcOpenClosed.sort(compare);
+    let listOfAtcOpenClosed = null;
+    if (result.listOfAtcOpenClosed) {
+      listOfAtcOpenClosed = result.listOfAtcOpenClosed.sort(compare);
+    }
     const updatedAt = result.updatedAt ? result.updatedAt : '';
     let tableSelector = document.getElementById('table-atc');
     document.getElementById('updated-at').innerText = updatedAt;
