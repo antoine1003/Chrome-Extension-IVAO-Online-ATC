@@ -10,6 +10,7 @@ chrome.runtime.onInstalled.addListener(() => {
 chrome.runtime.onStartup.addListener(() => {
   console.debug('onStartup', getLocale());
   moment.locale(getLocale());
+  getStatusOfAtc();
 });
 
 

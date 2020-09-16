@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "IVAO ATC Watcher"
+  },
+  "appDescription": {
+    "message": "Esta extensión permite a las personas saber cuándo los ATC están en línea."
+  },
+  "parametersSaved": {
+    "message": "¡Parámetros guardados!"
+  },
+  "notifications": {
+    "message": "Notificaciones"
+  },
+  "rating": {
+    "message": "Rango"
+  },
+  "position": {
+    "message": "Posición"
+  },
+  "online": {
+    "message": "En línea"
+  },
+  "offline": {
+    "message": "Desconectado"
+  },
+  "goToOptions": {
+    "message": "Ir a opciones"
+  },
+  "status": {
+    "message": "Estado"
+  },
+  "noData": {
+    "message": "Sin datos"
+  },
+  "optionsTitle": {
+    "message": "Parámetros de ATC Watcher"
+  },
+  "optionsAtcListLabel": {
+    "message": "Lista de ATC"
+  },
+  "optionsAtcListHelp": {
+    "message": "Separado por coma. p.ej. LFRS_TWR, LFBD_APP"
+  },
+  "save": {
+    "message": "Salvar"
+  },
+  "optionsAtcListFeedbackError": {
+    "message": "La lista solo puede contener letras mayúsculas y '_'. Formatos aceptados: AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
+  },
+  "notificationTitle": {
+    "message": "¡Nuevo(s) ATC(s) en línea!"
+  },
+  "notificationBody": {
+    "message": "La posición $position$ ya está abierta!",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "LFRS_APP"
+      }
+    }
+  },
+  "notificationBodyPlural": {
+    "message": "¡Las posiciones $positions$ ya están abiertas!",
+    "placeholders": {
+      "positions": {
+        "content": "$1",
+        "example": "LFRS_APP,LFRB_TWR"
+      }
+    }
+  }
+}

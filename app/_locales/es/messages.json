@@ -3,19 +3,19 @@
     "message": "IVAO ATC Watcher"
   },
   "appDescription": {
-    "message": "Questa estensione permette di essere informati sulla presenza di ATC connessi ."
+    "message": "Esta extensión permite ver cuando algunos ATC están conectados."
   },
   "parametersSaved": {
-    "message": "Parametri salvati !"
+    "message": "¡Parámetros guardados!"
   },
   "notifications": {
-    "message": "Notifiche"
+    "message": "Notificaciones"
   },
   "rating": {
-    "message": "Grado"
+    "message": "Habilitación"
   },
   "position": {
-    "message": "Unità ATC"
+    "message": "Posición"
   },
   "online": {
     "message": "Online"
@@ -24,34 +24,34 @@
     "message": "Offline"
   },
   "goToOptions": {
-    "message": "Vai alle opzioni"
+    "message": "Ir a opciones"
   },
   "status": {
-    "message": "Stato"
+    "message": "Estado"
   },
   "noData": {
-    "message": "Nessun dato"
+    "message": "Sin datos"
   },
   "optionsTitle": {
-    "message": "Parametri ATC Watcher"
+    "message": "Opciones ATC Watcher"
   },
   "optionsAtcListLabel": {
     "message": "Lista ATC"
   },
   "optionsAtcListHelp": {
-    "message": "Separati da una virgola, es. LIRF_TWR,LIML_APP"
+    "message": "Separados por coma. P.e.: LECO_TWR,LEST_APP"
   },
   "save": {
-    "message": "Salva"
+    "message": "Guardar"
   },
   "optionsAtcListFeedbackError": {
-    "message": "La lista deve contenere solo lettere maiuscole e '_'. Formati accettati: AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
+    "message": "La lista sólo puede contener mayúsculas y '_'. Formatos aceptados: AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
   },
   "notificationTitle": {
-    "message": "Nuovo ATC online !"
+    "message": "¡Nuevo ATC online!"
   },
   "notificationBody": {
-    "message": "L'unità ATC $position$ è ora attiva !",
+    "message": "¡$position$ está abierta!",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -60,7 +60,7 @@
     }
   },
   "notificationBodyPlural": {
-    "message": "Le unità ATC $positions$ sono ora attive !",
+    "message": "¡$positions$ están abiertas!",
     "placeholders": {
       "positions": {
         "content": "$1",
