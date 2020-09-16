@@ -67,5 +67,17 @@
         "example": "LFRS_APP,LFRB_TWR"
       }
     }
+  },
+  "optionsFullstaffListLabel": {
+    "message": "Aéroports fullstaff"
+  },
+  "optionsFullstaffListHelp": {
+    "message": "Séparé par des virgules LFRS,LEMD,LFPG"
+  },
+  "optionsFullstaffListFeedbackError": {
+    "message": "La chaîne n'est pas bien formattée. Elle ne doit contenir que des majuscules regroupées par 4. e.g. LFRS,LFML"
+  },
+  "notificationsFullstaff": {
+    "message": "Activer les notifications pour les fullstaffs."
   }
 }

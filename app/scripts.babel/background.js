@@ -100,6 +100,8 @@ function getStatusOfAtc() {
             }
             console.debug('listOfAtc', listOfAtc);
             handleResults(listOfAtc);
+            console.debug('openAtc',openAtc);
+            getFullStaffPosition(openAtc);
           },
         });
       }
@@ -159,8 +161,30 @@ function handleResults(results) {
  * TODO: Add functionality to spot full staff
  * @param results
  */
-function getFullStaffPosition(results) {
-
+function getFullStaffPosition(openPositions) {
+  chrome.storage.sync.get(['notificationsFullstaff'], function (result) {
+    const fullstaffArray = result.fullstaffList.split(',');
+    let fullstaffAirports = [];
+    if (fullstaffArray.length > 0) {
+      for (let i = 0; i < FULL_STAFF_LIST.length; i++) {
+        const AIRPORT = FULL_STAFF_LIST[i];
+        let airportObj = {};
+        let openOnCurrentAirport = openPositions.filter((el)  => {
+          if (el.position.includes(AIRPORT)) {
+            return true;
+          }
+          return false;
+        });
+        if (openOnCurrentAirport.length >= 2) {
+          airportObj.airport = AIRPORT;
+          airportObj.positions = openOnCurrentAirport;
+          fullstaffAirports.push(airportObj);
+        }
+      }
+    }
+    return fullstaffAirports;
+    console.debug('fullstaffAirports', fullstaffAirports);
+  });
 }
 
 function getNbOpenAtc(results) {

@@ -4,20 +4,17 @@
  * Save options to chrome storage
  */
 function saveOptions() {
-  let atcListEl = document.getElementById('atc-list');
-  let feedback = document.getElementById('atc-list-feedback-error');
-  if (atcListValidation()) {
-    const atcList = atcListEl.value;
+  if (checkAndDisplayError()) {
+    const atcList = document.getElementById('atc-list').value;
+    const fullstaffList = document.getElementById('fullstaff-list').value;
     const notifications = document.getElementById('notifications').checked;
-    if (atcListEl.classList.contains('is-invalid')) {
-      atcListEl.classList.remove('is-invalid');
-    }
-    if (!feedback.classList.contains('d-none')) {
-      feedback.classList.add('d-none');
-    }
+    const notificationsFullstaff = document.getElementById('notifications-fullstaff').checked;
+
     chrome.storage.sync.set({
         atcList: atcList,
-        notifications: notifications
+        notifications: notifications,
+        fullstaffList: fullstaffList,
+        notificationsFullstaff: notificationsFullstaff
       }, function () {
         // Update status to let user know options were saved.
         let status = document.getElementById('status');
@@ -28,10 +25,47 @@ function saveOptions() {
         }, 1000);
       }
     );
+  }
+}
+
+/**
+ * Check if all fields in parameters are well formatted.
+ * If OK => clear error ui and return true
+ * If KO => show error ui and return false
+ * @returns {boolean}
+ */
+function checkAndDisplayError() {
+  let atcListEl = document.getElementById('atc-list');
+  let feedbackAtcList = document.getElementById('atc-list-feedback-error');
+  let fullstaffListEl = document.getElementById('fullstaff-list');
+  let fullstaffListFeedback = document.getElementById('fullstaff-list-feedback-error');
+  if (atcListValidation()) {
+    if (aiportFullstaffValidation()) {
+      // ATC List Clear
+      if (atcListEl.classList.contains('is-invalid')) {
+        atcListEl.classList.remove('is-invalid');
+      }
+      if (!feedbackAtcList.classList.contains('d-none')) {
+        feedbackAtcList.classList.add('d-none');
+      }
+
+      // Fullstaff Clear
+      if (fullstaffListEl.classList.contains('is-invalid')) {
+        fullstaffListEl.classList.remove('is-invalid');
+      }
+      if (!fullstaffListFeedback.classList.contains('d-none')) {
+        fullstaffListFeedback.classList.add('d-none');
+      }
+      return true;
+    } else {
+      fullstaffListEl.classList.add('is-invalid');
+      fullstaffListFeedback.classList.remove('d-none');
+    }
   } else {
     atcListEl.classList.add('is-invalid');
-    feedback.classList.remove('d-none');
+    feedbackAtcList.classList.remove('d-none');
   }
+  return false;
 }
 
 /**
@@ -40,10 +74,19 @@ function saveOptions() {
 function restoreOptions() {
   chrome.storage.sync.get({
       atcList: '',
-      notifications: false
+      notifications: false,
+      fullstaffList: '',
+      notificationsFullstaff: true
     }, function (items) {
       document.getElementById('atc-list').value = items.atcList;
       document.getElementById('notifications').checked = items.notifications;
+      document.getElementById('fullstaff-list').value = items.fullstaffList;
+
+      if (items.notificationsFullstaff === false) {
+        let fullstaffListEl = document.getElementById('fullstaff-list');
+        fullstaffListEl.readOnly = true;
+      }
+      document.getElementById('notifications-fullstaff').checked = items.notificationsFullstaff;
     }
   );
 }
@@ -56,8 +99,12 @@ function initializeTranslations() {
   document.getElementById('atc-list-label').innerText = chrome.i18n.getMessage('optionsAtcListLabel');
   document.getElementById('atc-list-help').innerText = chrome.i18n.getMessage('optionsAtcListHelp');
   document.getElementById('atc-list-feedback-error').innerText = chrome.i18n.getMessage('optionsAtcListFeedbackError');
-  document.getElementById('save').innerText = chrome.i18n.getMessage('save');
+  document.getElementById('fullstaff-list-label').innerText = chrome.i18n.getMessage('optionsFullstaffListLabel');
+  document.getElementById('fullstaff-list-help').innerText = chrome.i18n.getMessage('optionsFullstaffListHelp');
+  document.getElementById('fullstaff-list-feedback-error').innerText = chrome.i18n.getMessage('optionsFullstaffListFeedbackError');
+  document.getElementById('notifications-fullstaff-label').innerText = chrome.i18n.getMessage('notificationsFullstaff');
   document.getElementById('notifications-label').innerText = chrome.i18n.getMessage('notifications');
+  document.getElementById('save').innerText = chrome.i18n.getMessage('save');
 }
 
 /**
@@ -76,7 +123,24 @@ function atcListValidation() {
   }
 }
 
+function aiportFullstaffValidation() {
+  const REGEX_AIRPORT_LIST = /^([A-Z]){4}(,[A-Z]{4})*$/;
+  let value = document.getElementById('fullstaff-list').value;
+  if (value.match(REGEX_AIRPORT_LIST)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function handleChangeFullstaffNotification(e) {
+  const isChecked = e.target.checked;
+  let fullstaffListEl = document.getElementById('fullstaff-list');
+  fullstaffListEl.readOnly = !isChecked;
+}
+
 document.addEventListener('DOMContentLoaded', initializeTranslations);
 document.addEventListener('DOMContentLoaded', restoreOptions);
 
 document.getElementById('save').addEventListener('click', saveOptions);
+document.getElementById('notifications-fullstaff').addEventListener('change', handleChangeFullstaffNotification);
