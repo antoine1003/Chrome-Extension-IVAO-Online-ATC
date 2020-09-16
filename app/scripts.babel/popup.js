@@ -44,7 +44,16 @@ function buildTable() {
           imgTd.classList.add('text-center');
           img = document.createElement('img');
           img.setAttribute('src', 'images/grades/' + el.grade + '.gif');
-          imgTd.appendChild(img);
+          if (el.vid !== null) {
+            const urlToProfile = 'https://www.ivao.aero/Member.aspx?ID=';
+            let linkEl = document.createElement('a');
+            linkEl.href = urlToProfile + el.vid;
+            linkEl.target = '_blank';
+            linkEl.appendChild(img);
+            imgTd.appendChild(linkEl);
+          } else {
+            imgTd.appendChild(img);
+          }
         }
         trEl.appendChild(imgTd);
         tableSelector.appendChild(trEl);
