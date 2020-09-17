@@ -11,9 +11,9 @@
   "default_locale": "en",
   "background": {
     "scripts": [
-      "libs/polyfill.min.js",
-      "libs/papaparse.min.js",
-      "libs/moment.min.js",
+      "libs/js/polyfill.min.js",
+      "libs/js/papaparse.min.js",
+      "libs/js/moment.min.js",
       "scripts/chromereload.js",
       "scripts/background.js"
     ]
