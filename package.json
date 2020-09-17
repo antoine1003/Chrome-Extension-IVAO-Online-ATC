@@ -11,6 +11,7 @@
     "@babel/register": "^7.0.0",
     "babel-eslint": "^10.0.1",
     "del": "^2.2.0",
+    "eslint": "^7.9.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^8.0.0",
     "gulp-cache": "^0.4.3",
@@ -29,9 +30,9 @@
     "gulp-useref": "^3.0.8",
     "gulp-zip": "^3.2.0",
     "main-bower-files": "^2.11.1",
+    "purgecss": "^2.3.0",
     "run-sequence": "^1.1.5",
-    "wiredep": "^4.0.0",
-    "eslint": "^7.9.0"
+    "wiredep": "^4.0.0"
   },
   "eslintConfig": {
     "env": {
@@ -56,5 +57,8 @@
   },
   "dependencies": {
     "eslint-scope": "^5.1.0"
+  },
+  "scripts": {
+    "purge": "purgecss --css .\\app\\libs\\css\\bootstrap.min.css -o .\\app\\styles\\bootstrap-purged.min.css --content \".\\app\\popup.html,.\\app\\options.html,.\\app\\scripts.babel\\options.js,.\\app\\scripts.babel\\popup.js\""
   }
 }
