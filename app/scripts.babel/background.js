@@ -21,7 +21,7 @@ chrome.alarms.onAlarm.addListener((alarm) => {
 });
 
 chrome.storage.onChanged.addListener(function(changes, namespace) {
-  if (changes.hasOwnProperty('atcList')) {
+  if (changes.hasOwnProperty('atcList') || changes.hasOwnProperty('fullstaffList')) {
     getStatusOfAtc();
   }
 });
