@@ -72,7 +72,8 @@ function getStatusOfAtc() {
                 let objAtc = {
                   position: callsign,
                   grade: obj[41],
-                  openAt: obj[37]
+                  openAt: obj[37],
+                  vid: obj[1]
                 };
                 openAtc.push(objAtc);
               }
@@ -91,7 +92,8 @@ function getStatusOfAtc() {
                   position: position,
                   grade: null,
                   openAt: null,
-                  isOpen: false
+                  isOpen: false,
+                  vid: null
                 };
               }
               listOfAtc.push(openPositionObj);
