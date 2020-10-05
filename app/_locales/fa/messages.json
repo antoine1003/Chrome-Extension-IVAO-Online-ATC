@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "IVAO ATC Watcher"
+  },
+  "appDescription": {
+    "message": "این افزوده به شما اجازه میدهد تا بدونید کی پوزیشن های ATC انلاین هستند"
+  },
+  "parametersSaved": {
+    "message": "ذخیره شد!"
+  },
+  "notifications": {
+    "message": "اعلانات"
+  },
+  "rating": {
+    "message": "رتبه"
+  },
+  "position": {
+    "message": "ایستگاه"
+  },
+  "online": {
+    "message": "روشن"
+  },
+  "offline": {
+    "message": "خاموش"
+  },
+  "goToOptions": {
+    "message": "به تنظیمات بروید"
+  },
+  "status": {
+    "message": "وضعیت"
+  },
+  "noData": {
+    "message": "اطلاعاتی موجود نیست"
+  },
+  "optionsTitle": {
+    "message": "پاراتمتر های تماشاگر ATC"
+  },
+  "optionsAtcListLabel": {
+    "message": "لیست ATC"
+  },
+  "optionsAtcListHelp": {
+    "message": "جدا شده با استفاده از ویرگول به طور مثال LFRS_TWR,LFBD_APP"
+  },
+  "save": {
+    "message": "Save"
+  },
+  "optionsAtcListFeedbackError": {
+    "message": "این لیست فقط شامل حروف بزرگ میباشد, فرمت قابل قبول: AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
+  },
+  "notificationTitle": {
+    "message": "ATC جدید انلاین شد!"
+  },
+  "notificationBody": {
+    "message": "ایستگاه $position$ الان روشن است!",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "LFRS_APP"
+      }
+    }
+  },
+  "notificationBodyPlural": {
+    "message": "ایستگاه $positions$ الان روشن است!",
+    "placeholders": {
+      "positions": {
+        "content": "$1",
+        "example": "LFRS_APP,LFRB_TWR"
+      }
+    }
+  }
+}

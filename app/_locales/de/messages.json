@@ -3,7 +3,7 @@
     "message": "IVAO ATC Watcher"
   },
   "appDescription": {
-    "message": "Diese Extension benachrichtigt dich wenn Lotsen online sind."
+    "message": "Diese Erweiterung benachrichtigt dich, wenn Lotsen online sind."
   },
   "parametersSaved": {
     "message": "Einstellungen gespeichert !"
@@ -33,10 +33,10 @@
     "message": "Keine Daten"
   },
   "optionsTitle": {
-    "message": "ATC Monitor Einstellungen"
+    "message": "ATC-Watcher-Einstellungen"
   },
   "optionsAtcListLabel": {
-    "message": "ATC liste"
+    "message": "ATC-liste"
   },
   "optionsAtcListHelp": {
     "message": "Kommaseparierte Liste: EDDT_TWR,EDBB_N_APP"
@@ -45,7 +45,7 @@
     "message": "Speichern"
   },
   "optionsAtcListFeedbackError": {
-    "message": "Die Liste darf nur Großbuchstaben und _ beinhalten. Akzeptierte Formate : AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
+    "message": "Die Liste darf nur Großbuchstaben und '_' beinhalten. Akzeptierte Formate: AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
   },
   "notificationTitle": {
     "message": "Neue Lotsen online !"

@@ -67,5 +67,8 @@
         "example": "LFRS_APP,LFRB_TWR"
       }
     }
+  },
+  "helpMessage": {
+    "message": "Si vous voyez des erreurs dans les traductions ou que votre langue n'est pas disponible, rendez-vous <a href=\"https://poeditor.com/join/project?hash=sXcQfqtqFG\" target=\"_blank\">ici</a> afin de m'aider dans la traduction de cette extension.<br/>Un bug, une idée d'amélioration? Contactez moi sur antoine.dautry@gmail.com."
   }
 }
