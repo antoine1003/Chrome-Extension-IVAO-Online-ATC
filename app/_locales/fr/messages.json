@@ -70,5 +70,8 @@
   },
   "helpMessage": {
     "message": "Si vous voyez des erreurs dans les traductions ou que votre langue n'est pas disponible, rendez-vous <a href=\"https://poeditor.com/join/project?hash=sXcQfqtqFG\" target=\"_blank\">ici</a> afin de m'aider dans la traduction de cette extension.<br/>Un bug, une idée d'amélioration? Contactez moi sur antoine.dautry@gmail.com."
+  },
+  "helpUsageMessage": {
+    "message": "Toutes les 15 minutes, l'extension va vérifier si l'une des positions renseignées est ouverte. Lorsque vous mettez à jours la liste une nouvelle vérification est effectuée. Seules les positions ouvertes depuis moins de 15 minutes seront affichées dans les notifications (si elles sont activées)."
   }
 }

@@ -69,6 +69,9 @@
     }
   },
   "helpMessage": {
-    "message": "If you see errors in the translations or if your language is not available, go <a href=\"https://poeditor.com/join/project?hash=sXcQfqtqFG\" target=\"_blank\">here</a> to help me with the translation of this extension. A bug, an idea for improvement? Contact me on antoine.dautry@gmail.com."
+    "message": "If you see errors in the translations or if your language is not available, go <a href=\"https://poeditor.com/join/project?hash=sXcQfqtqFG\" target=\"_blank\">here</a> to help me with the translation of this extension.<br/>A bug, an idea for improvement? Contact me on antoine.dautry@gmail.com."
+  },
+  "helpUsageMessage": {
+    "message": "Every 15 minutes, the extension will check if one of the filled positions is open. When you update the list a new check is performed. Only positions that have been open for less than 15 minutes will be shown in the notifications (if they are activated)."
   }
 }
