@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "IVAO ATC Watcher"
+  },
+  "appDescription": {
+    "message": "Это расширение позволяет людям узнать, когда некоторые диспетчеры УВД в сети."
+  },
+  "parametersSaved": {
+    "message": "Параметры сохранены !"
+  },
+  "notifications": {
+    "message": "Уведомления"
+  },
+  "rating": {
+    "message": "Рейтинг"
+  },
+  "position": {
+    "message": "Позиция"
+  },
+  "online": {
+    "message": "В сети"
+  },
+  "offline": {
+    "message": "Не в сети"
+  },
+  "goToOptions": {
+    "message": "Перейти в опции"
+  },
+  "status": {
+    "message": "Статус"
+  },
+  "noData": {
+    "message": "Нет данных"
+  },
+  "optionsTitle": {
+    "message": "Параметр ATC Watcher"
+  },
+  "optionsAtcListLabel": {
+    "message": "Список"
+  },
+  "optionsAtcListHelp": {
+    "message": "Через запятую. Например: LFRS_TWR,LFBD_APP"
+  },
+  "save": {
+    "message": "Сохранить"
+  },
+  "optionsAtcListFeedbackError": {
+    "message": "Список может содержать заглавные буквы и '_'. Допустимые форматы: AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
+  },
+  "notificationTitle": {
+    "message": "Новые диспетчер(ы) УВД в сети !"
+  },
+  "notificationBody": {
+    "message": "Позиция $position$ открыта !",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "LFRS_APP"
+      }
+    }
+  },
+  "notificationBodyPlural": {
+    "message": "Позиции $positions$ открыты !",
+    "placeholders": {
+      "positions": {
+        "content": "$1",
+        "example": "LFRS_APP,LFRB_TWR"
+      }
+    }
+  }
+}

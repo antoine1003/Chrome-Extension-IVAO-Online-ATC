@@ -3,55 +3,55 @@
     "message": "IVAO ATC Watcher"
   },
   "appDescription": {
-    "message": "Ovaj dodatak omogućuje korisniku da vidi kada je određeni kontrolor leta na mreži."
+    "message": "Denne anvendelse giver mennesker mulighed for at vide, hvornår ATC er online."
   },
   "parametersSaved": {
-    "message": "Parametri spremljeni!"
+    "message": "Indstillinger gemt !"
   },
   "notifications": {
-    "message": "Obavijest"
+    "message": "Meddelelser"
   },
   "rating": {
-    "message": "Rating"
+    "message": "Rang"
   },
   "position": {
-    "message": "Pozicija"
+    "message": "Position"
   },
   "online": {
-    "message": "Na mreži"
+    "message": "Forbundet"
   },
   "offline": {
-    "message": "Izvan mreže"
+    "message": "Offline"
   },
   "goToOptions": {
-    "message": "Idi na opcije"
+    "message": "Gå til indstillinger"
   },
   "status": {
     "message": "Status"
   },
   "noData": {
-    "message": "Nema podataka"
+    "message": "Ingen data"
   },
   "optionsTitle": {
-    "message": "Parametri ATC watcher"
+    "message": "ATC Watcher parametre"
   },
   "optionsAtcListLabel": {
-    "message": "Popis kontrolora"
+    "message": "ATC liste"
   },
   "optionsAtcListHelp": {
-    "message": "Odvojeno zarezom. Npr. LFRS_TWR,LFBD_APP"
+    "message": "Adskilt med kommaer, fx EKBI_TWR,EKCH_APP"
   },
   "save": {
-    "message": "Spremi"
+    "message": "Gem"
   },
   "optionsAtcListFeedbackError": {
-    "message": "Popis moze sadržavati samo velika slova i '_':AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
+    "message": "Listen kan kun indholde store bogstaver og '_'. Accepterede formater : AAAA_AAA, BBBB_BB_BBB, CCC_CCC_CCC"
   },
   "notificationTitle": {
-    "message": "Novi kontrolor(i) na mreži!"
+    "message": "Ny ATC(s) forbundet !"
   },
   "notificationBody": {
-    "message": "Pozicija $position$ je sad otvorena!",
+    "message": "Position $position$ er nu åben !",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -60,7 +60,7 @@
     }
   },
   "notificationBodyPlural": {
-    "message": "Pozicije $positions$ su sad otvorene!",
+    "message": "Positioner $positions$ er nu åben !",
     "placeholders": {
       "positions": {
         "content": "$1",

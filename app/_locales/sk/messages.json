@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "IVAO ATC Watcher"
+  },
+  "appDescription": {
+    "message": "Toto rozšírenie umožňuje dať vedieť, keď je nejaký ATC pripojený."
+  },
+  "parametersSaved": {
+    "message": "Parametre uložené !"
+  },
+  "notifications": {
+    "message": "Upozornenia"
+  },
+  "rating": {
+    "message": "Úroveň"
+  },
+  "position": {
+    "message": "Pozícia"
+  },
+  "online": {
+    "message": "Pripojený"
+  },
+  "offline": {
+    "message": "Nedostupný"
+  },
+  "goToOptions": {
+    "message": "Ísť do nastavení"
+  },
+  "status": {
+    "message": "Stav"
+  },
+  "noData": {
+    "message": "Žiadne údaje"
+  },
+  "optionsTitle": {
+    "message": "Parametre ATC Watcher"
+  },
+  "optionsAtcListLabel": {
+    "message": "Zoznam ATC"
+  },
+  "optionsAtcListHelp": {
+    "message": "Oddeliť čiarkou. napr. LFRS_TWR,LFBD_APP"
+  },
+  "save": {
+    "message": "Uložiť"
+  },
+  "optionsAtcListFeedbackError": {
+    "message": "Zoznam môže obsahovať len veľké písmená a podtržník ('_'). Akceptované formáty : AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
+  },
+  "notificationTitle": {
+    "message": "Nový ATC pripojený !"
+  },
+  "notificationBody": {
+    "message": "Pozícia $position$ je práve otvorená !",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "LFRS_APP"
+      }
+    }
+  },
+  "notificationBodyPlural": {
+    "message": "Pozície $positions$ sú práve otvorené !",
+    "placeholders": {
+      "positions": {
+        "content": "$1",
+        "example": "LFRS_APP,LFRB_TWR"
+      }
+    }
+  }
+}
