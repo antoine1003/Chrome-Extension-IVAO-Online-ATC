@@ -67,5 +67,11 @@
         "example": "LFRS_APP,LFRB_TWR"
       }
     }
+  },
+  "helpMessage": {
+    "message": "Wenn du Übersetzungsfehler findest, oder deine Sprache nicht vorhanden ist, klicke auf <a href=\"https://poeditor.com/join/project?hash=sXcQfqtqFG\" target=\"_blank\">hier</a> und helfe mir bei der Übersetzung dieses Tools. <br/> Hast du einen Fehler gefunden oder eine Idee, das Tool zu verbessern? Dann schreibe eine Mail an antoine.dautry@gmail.com."
+  },
+  "helpUsageMessage": {
+    "message": "Alle 15 Minuten überprüft die Anwendung, ob eine ausgewählte ATC-Position online ist. Wenn die Liste verändert wird, wird ebenfalls eine Überprüfung durchgeführt."
   }
 }
