@@ -48,7 +48,7 @@
     "message": "La lista sólo puede contener mayúsculas y '_'. Formatos aceptados: AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
   },
   "notificationTitle": {
-    "message": "¡Nuevo ATC online!"
+    "message": "¡Nuevo ATC conectado!"
   },
   "notificationBody": {
     "message": "¡$position$ está abierta!",

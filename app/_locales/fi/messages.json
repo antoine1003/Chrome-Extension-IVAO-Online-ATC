@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "IVAO ATC Watcher"
+  },
+  "appDescription": {
+    "message": "Tämä laajennus kertoo, kun tietyissä paikoissa on lennonjohtoa."
+  },
+  "parametersSaved": {
+    "message": "Parametrit tallennettu!"
+  },
+  "notifications": {
+    "message": "Ilmoitukset"
+  },
+  "rating": {
+    "message": "Luokitus"
+  },
+  "position": {
+    "message": "Paikka"
+  },
+  "online": {
+    "message": "Paikalla"
+  },
+  "offline": {
+    "message": "Ei paikalla"
+  },
+  "goToOptions": {
+    "message": "Siirry asetuksiin"
+  },
+  "status": {
+    "message": "Tila"
+  },
+  "noData": {
+    "message": "Ei tietoa"
+  },
+  "optionsTitle": {
+    "message": "ATC Watcher parametrit"
+  },
+  "optionsAtcListLabel": {
+    "message": "Lennonjohtoluettelo"
+  },
+  "optionsAtcListHelp": {
+    "message": "Erotettu pilkulla, esim. EFHK_TWR,EFRO_APP"
+  },
+  "save": {
+    "message": "Tallenna"
+  },
+  "optionsAtcListFeedbackError": {
+    "message": "Luettelossa voi olla vain isoja kirjaimia ja '_'. Hyväksytyt muodot: AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
+  },
+  "notificationTitle": {
+    "message": "Uusia lennonjohtajia paikalla!"
+  },
+  "notificationBody": {
+    "message": "$position$ on nyt avoinna!",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "LFRS_APP"
+      }
+    }
+  },
+  "notificationBodyPlural": {
+    "message": "$positions$ ovat nyt avoinna!",
+    "placeholders": {
+      "positions": {
+        "content": "$1",
+        "example": "LFRS_APP,LFRB_TWR"
+      }
+    }
+  }
+}

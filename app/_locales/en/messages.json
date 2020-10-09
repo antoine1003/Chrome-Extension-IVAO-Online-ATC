@@ -6,7 +6,7 @@
     "message": "This extension allows people to know when some ATC are online."
   },
   "parametersSaved": {
-    "message": "Parameters saved !"
+    "message": "Parameters saved!"
   },
   "notifications": {
     "message": "Notifications"
@@ -45,13 +45,13 @@
     "message": "Save"
   },
   "optionsAtcListFeedbackError": {
-    "message": "List can only contain uppercase letter and '_'. Accepted formats : AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
+    "message": "List can only contain uppercase letters and '_'. Accepted formats: AAAA_AAA, BBBB_BB_BBB, CCCC_CCC_CCC"
   },
   "notificationTitle": {
-    "message": "New ATC(s) online !"
+    "message": "New ATC(s) online!"
   },
   "notificationBody": {
-    "message": "Position $position$ is now open !",
+    "message": "Position $position$ is now open!",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -60,12 +60,18 @@
     }
   },
   "notificationBodyPlural": {
-    "message": "Positions $positions$ are now open !",
+    "message": "Positions $positions$ are now open!",
     "placeholders": {
       "positions": {
         "content": "$1",
         "example": "LFRS_APP,LFRB_TWR"
       }
     }
+  },
+  "helpMessage": {
+    "message": "If you see errors in the translations or if your language is not available, go <a href=\"https://poeditor.com/join/project?hash=sXcQfqtqFG\" target=\"_blank\">here</a> to help me with the translation of this extension.<br/>A bug, an idea for improvement? Contact me on antoine.dautry@gmail.com."
+  },
+  "helpUsageMessage": {
+    "message": "Every 15 minutes, the extension will check if one of the filled positions is open. When you update the list a new check is performed. Only positions that have been open for less than 15 minutes will be shown in the notifications (if they are activated)."
   }
 }

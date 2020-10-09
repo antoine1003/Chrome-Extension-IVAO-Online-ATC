@@ -51,7 +51,7 @@
     "message": "Ny ATC(s) forbundet !"
   },
   "notificationBody": {
-    "message": "Position $position$ er nu åben !",
+    "message": "Position $position$ er åben nu !",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -60,7 +60,7 @@
     }
   },
   "notificationBodyPlural": {
-    "message": "Positioner $positions$ er nu åben !",
+    "message": "Positioner $positions$ er åben nu !",
     "placeholders": {
       "positions": {
         "content": "$1",
