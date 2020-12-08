@@ -67,5 +67,11 @@
         "example": "LFRS_APP,LFRB_TWR"
       }
     }
+  },
+  "helpMessage": {
+    "message": "Jeśli zauważysz błędy w tłumaczeniach lub jeśli Twój język nie jest dostępny, przejdź do <a href=\"https://poeditor.com/join/project?hash=sXcQfqtqFG\" target=\"_blank\">https://poeditor.com/join/project?hash=sXcQfqtqFG</a>, aby pomóc mi w tłumaczeniu tego rozszerzenia. <br/> Błąd, pomysł na poprawę? Skontaktuj się ze mną na antoine.dautry@gmail.com."
+  },
+  "helpUsageMessage": {
+    "message": "Co 15 minut rozszerzenie sprawdza, czy któryś z podanych ATC jest otwarty. Po dodaniu nowego ATC do listy wykonywany jest nowy test."
   }
 }

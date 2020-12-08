@@ -67,5 +67,11 @@
         "example": "LFRS_APP,LFRB_TWR"
       }
     }
+  },
+  "helpMessage": {
+    "message": "Se você achar algum erro na tradução ou se seu idioma não estiver disponível, visite <a href=\\\"https://poeditor.com/join/project?hash=sXcQfqtqFG\\\" target=\\\"_blank\\\">https://poeditor.com/join/project?hash=sXcQfqtqFG</a> para me ajudar com a tradução dessa extensão.<br/>Achou um bug ou tem alguma ideia pra melhoria? Manda um email pra antoine.dautry@gmail.com."
+  },
+  "helpUsageMessage": {
+    "message": "A cada 15 minutos, essa extensão verifica que um dos ATC da lista está online. Quando voê acrescenta um novo ATC na lista, uma nova verificação é feita."
   }
 }
